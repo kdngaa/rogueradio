@@ -65,3 +65,20 @@
     cursor: pointer;
     margin-bottom: 20px;
   }
+
+.logInMainBtn{
+    width:fit-content;
+    justify-content: center;
+    align-items: center;
+    background-color: 	#1DB954;
+    color: white;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    font-size: 15pt;
+    font-weight: 700;
+    transition: 1s;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
