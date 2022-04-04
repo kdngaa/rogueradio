@@ -1,0 +1,10 @@
+.userAuthNav{
+  background-color: transparent;
+  display: inline-block;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 46px;
+  padding-top: 1.5%;
+  padding-right: 1.5%;
+}

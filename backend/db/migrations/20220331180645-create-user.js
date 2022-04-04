@@ -13,6 +13,9 @@ module.exports = {
         allowNull: false,
         unique: true
       },
+      userImgURL: {
+        type: Sequelize.TEXT
+      },
       email: {
         type: Sequelize.STRING(256),
         allowNull: false,

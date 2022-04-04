@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/kdngaa/staycation/issues"
   },
-  "homepage": "https://github.com/kdngaa/staycation#readme"
+  "homepage": "https://github.com/kdngaa/staycation#readme",
+  "dependencies": {
+    "reactjs-popup": "^2.0.5"
+  }
 }
