@@ -3,3 +3,18 @@
     display: flex;
     justify-content: center;
 }
+
+
+.songCard a{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 25px;
+  border: 20px;
+  padding: 20px;
+  float: left;
+  border-radius: 18px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}

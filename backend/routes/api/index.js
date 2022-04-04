@@ -4,6 +4,7 @@ const { setTokenCookie } = require('../../utils/auth.js');
 const { User } = require('../../db/models');
 const { restoreUser } = require('../../utils/auth.js');
 const { requireAuth } = require('../../utils/auth.js');
+const songsRouter = require("./songs.js");
 // const { route } = require('../index.js');
 // const { Router } = require('express');
 const router = require('express').Router();
@@ -19,6 +20,13 @@ router.use('/users', usersRouter);
 router.post('/test', (req, res) => {
     res.json({ requestBody: req.body }); //request is an object that you're keying into
 });
+
+router.use("/songs", songsRouter);
+
+
+
+
+
 
 
 

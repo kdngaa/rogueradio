@@ -7,12 +7,13 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Splash from './components/Splash';
 import Upload from './components/Upload'
-
+import {getSongs} from './store/song'
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    // dispatch(getSongs())
   }, [dispatch]);
 
   return (

@@ -1,7 +1,9 @@
-const loadSongs = 'songs/load'
+// import {csrfFetch} from './csrf';
 
-const load = songs({
-    type: loadSongs,
+const LOAD_SONGS = 'songs/load'
+
+const load = songs =>({
+    type: LOAD_SONGS,
     songs
 })
 
@@ -20,7 +22,15 @@ export const getSongs = () => async dispatch => {
 const initialState = {songs:[]}
 const songReducer = (state = initialState, action) => {
     switch(action.type){
-        case load:
+        case LOAD_SONGS:
+            // const newState = {}
+            // const songs = {}
+            // action.songs.getAllSongs.forEach(song => {
+            //     songs[song.id] = song
+            // })
+            // newState.songs=songs
+            // return {...newState, ...state}
+
             const getSongs = {}
             action.songs.forEach(song => {
                 getSongs[song.id] = song
