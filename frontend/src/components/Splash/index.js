@@ -23,20 +23,19 @@ function Splash() {
                 {songInfo.map((song, idx) => (
                     <a href={`/songs/${song.id}`} key={idx}>
                         <img src={song.songImg} width='200px' height='200px' />
-                        <p>{`Title: ${song.title}`}</p>
-                        <p>{`Artist: ${song.artist}`}</p>
-                        <p>{`Genre: ${song.genre}`}</p>
+                        <p className="songText">{`Title: ${song.title}`}</p>
+                        <p className="songText">{`Artist: ${song.artist}`}</p>
+                        <p className="songText">{`Genre: ${song.genre}`}</p>
                         {/* <p>{`${song.songImg}`}</p> */}
+                        <ReactAudioPlayer
+                            src={`${song.audioFile}`}
+                            autoPlay
+                            controls
+                        />
                     </a>
                 ))}
             </div>
 
-            <ReactAudioPlayer
-                src="https://res.cloudinary.com/dv3gxfdon/video/upload/v1649088018/yt5s.com_-_keshi_-_beside_you_Audio_128_kbps_q0v6l1.mp3"
-                autoPlay
-                controls
-
-            />
 
         </>
     )
