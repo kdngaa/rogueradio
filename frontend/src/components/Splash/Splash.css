@@ -8,7 +8,7 @@
 .songCard a{
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction:column;
   justify-content: center;
   align-content: center;
   margin: 25px;
@@ -23,9 +23,47 @@ color: white;
 text-decoration: none;
 }
 
+.uploadSongForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 620px;
+  padding: 50px;
+  border-radius: 10px;
+  -webkit-box-shadow:0 0 20px #1DB954;
+  -moz-box-shadow: 0 0 20px #1DB954;
+  box-shadow:0 0 20px #1DB954;
+}
 
-.songText{
-  text-align: right;
-  font-weight:bold;
-  font-size:18px;
+
+.uploadBtn{
+  width:fit-content;
+    justify-content: center;
+    align-items: center;
+    background-color: 	#1DB954;
+    color: white;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    font-size: 15pt;
+    font-weight: 700;
+    transition: 1s;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 28px;
+}
+
+.fileBtn{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 15px;
+}
+
+
+.fileHead{
+  margin-top: 10px;
+  font-style: italic;
 }

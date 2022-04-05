@@ -13,17 +13,17 @@ function Navigation({ isLoaded }) {
   if (sessionUser) {
     sessionLinks = (
       <>
-      <ProfileButton user={sessionUser} />
-      <NavLink to="/upload" user={sessionUser}> Upload </NavLink>
+        <ProfileButton user={sessionUser} />
+        <NavLink to="/upload" user={sessionUser}> Upload </NavLink>
       </>
     );
   } else {
     sessionLinks = (
-      <>
-        <LoginFormModal />
-        <SignUpFormModal />
+      <div className='modalBtn'>
+        <a><LoginFormModal /></a>
+        <a><SignUpFormModal /></a>
         {/* <NavLink to="/signup">Sign Up</NavLink> */}
-      </>
+      </div>
     );
   }
 

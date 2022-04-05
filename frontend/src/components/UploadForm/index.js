@@ -39,6 +39,7 @@ function Upload() {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     required
+                    className="fieldText"
                 />
                 <input
                     type="text"
@@ -46,6 +47,7 @@ function Upload() {
                     value={genre}
                     onChange={(e) => setGenre(e.target.value)}
                     required
+                    className="fieldText"
                 />
                 <input
                     type="text"
@@ -53,23 +55,25 @@ function Upload() {
                     value={artist}
                     onChange={(e) => setArtist(e.target.value)}
                     required
+                    className="fieldText"
                 />
                 <input
                     type="text"
-                    placeholder="Song Image"
+                    placeholder="Image URL"
                     value={songImg}
                     onChange={(e) => setSongImg(e.target.value)}
                     required
+                    className="fieldText"
                 />
-                {/* <label>Audio File</label>
+                <label className="fileHead">MP3/MP4</label>
                 <input
                     type="file"
-                    placeholder="Upload File"
-                    value={audioFile}
+                    placeholder="MP3/MP4"
                     onChange={(e) => setAudioFile(e.target.files)}
                     required
-                /> */}
-                <button className="uploadFile" type="Submit">Post Song</button>
+                    className="fileBtn"
+                />
+                <button className="uploadBtn" type="Submit">Post Song</button>
             </form>
         </section>
     )

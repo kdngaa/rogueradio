@@ -26,3 +26,8 @@
   cursor: pointer;
   margin-bottom: 20px;
 }
+
+.modalBtn a{
+  display: flex;
+  justify-content: flex-end;
+}
