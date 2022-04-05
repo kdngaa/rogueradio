@@ -16,5 +16,9 @@
   padding: 20px;
   float: left;
   border-radius: 18px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow:0 0 20px #1DB954;
+-moz-box-shadow: 0 0 20px #1DB954;
+box-shadow:0 0 20px #1DB954;
+color: white;
+text-decoration: none;
 }

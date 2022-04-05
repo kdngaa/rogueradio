@@ -1,13 +1,13 @@
 // frontend/src/App.js
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Splash from './components/Splash';
-import Upload from './components/Upload'
-import {getSongs} from './store/song'
+import UploadForm from './components/UploadForm'
+import { getSongs } from './store/song'
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -15,6 +15,7 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
     // dispatch(getSongs())
   }, [dispatch]);
+  const sessionUser = useSelector(state => state.session.user)
 
   return (
 
@@ -28,13 +29,12 @@ function App() {
           <Route exact path='/'>
             <Splash />
           </Route>
-          <Route path='/upload'>
-            <Upload />
+          <Route path='/upload' >
+            <UploadForm user={sessionUser} />
           </Route>
         </Switch>
       )}
     </>
-
   );
 }
 

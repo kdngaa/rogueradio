@@ -17,15 +17,11 @@ router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
-router.post('/test', (req, res) => {
-    res.json({ requestBody: req.body }); //request is an object that you're keying into
-});
+// router.post('/test', (req, res) => {
+//     res.json({ requestBody: req.body }); //request is an object that you're keying into
+// });
 
 router.use("/songs", songsRouter);
-
-
-
-
 
 
 

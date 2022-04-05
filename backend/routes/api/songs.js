@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
 const { Song, User, Like, Comment } = require('../../db/models');
-const { setTokenCookie, restoreUser, requireAuth} = require('../../utils/auth');
 
 
 
@@ -12,6 +11,8 @@ router.get('/', asyncHandler( async(req, res) => {
     console.log(getAllSongs)
     return res.json(getAllSongs)
 }))
+
+
 
 
 
@@ -28,18 +29,14 @@ router.get('/:id(\\d+)', asyncHandler( async(req, res) =>{
 
 
 // UPLOAD SONG (CREATE)
-router.post('/upload', requireAuth,asyncHandler( async(res, req) =>{
-    const {title, genre, audioFile, songImg, artist} = req.body;
+router.post('/', asyncHandler( async(res, req) =>{
+    const {title, artist, genre, songImg, audioFile} = req.body;
 
     const newSong = await Song.create({
-        title, genre, audioFile, songImg, artist
+        title, artist, genre, songImg, audioFile
     })
-
-    if (newSong) {
-        return res.json({ newSong });
-      } else return res.json({});
+     return res.json({ newSong });
 }))
-
 
 
 module.exports = router;
