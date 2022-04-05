@@ -23,7 +23,7 @@ function Upload() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const song = { title, artist, genre, songImg, audioFile }
+        const song = {userId:sessionUser.id, title, artist, genre, songImg, audioFile }
 
         dispatch(postSong(song))
 
@@ -67,9 +67,10 @@ function Upload() {
                 />
                 <label className="fileHead">MP3/MP4</label>
                 <input
-                    type="file"
+                    type="text"
                     placeholder="MP3/MP4"
-                    onChange={(e) => setAudioFile(e.target.files)}
+                    value={audioFile}
+                    onChange={(e) => setAudioFile(e.target.value)}
                     required
                     className="fileBtn"
                 />
