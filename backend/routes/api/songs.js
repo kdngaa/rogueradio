@@ -29,11 +29,11 @@ router.get('/:id(\\d+)', asyncHandler( async(req, res) =>{
 
 
 // UPLOAD SONG (CREATE)
-router.post('/', asyncHandler( async(res, req) =>{
-    const {title, artist, genre, songImg, audioFile} = req.body;
+router.post('/', asyncHandler( async(req, res) =>{
+    const {userId, title, artist, genre, songImg, audioFile} = req.body;
 
     const newSong = await Song.create({
-        title, artist, genre, songImg, audioFile
+        userId, title, artist, genre, songImg, audioFile
     })
      return res.json({ newSong });
 }))
