@@ -12,17 +12,28 @@ function Splash() {
         dispatch(getSongs())
     }, [dispatch])
 
+    const sessionUser = useSelector((state) => state.session.user)
     const songs = useSelector(state => state.song);
     console.log(songs)
     const songInfo = Object.values(songs)
+
 
     return (
         <>
             <h1> Welcome to Rogue Radio</h1>
             <div className='songCard' >
                 {songInfo.map((song, idx) => (
+                    // let loggedIn;
+                    // if (sessionUser) {
+                    //     if (sessionUser.id === song.userId) {
+                    //         loggedIn = (<div>
+                    //             <button>Edit Song</button>
+                    //             <button>Delete Song</button>
+                    //         </div>)
+                    //     }
+                    // }
                     <a href={`/songs/${song.id}`} key={idx}>
-                        <img src={song.songImg} width='200px' height='200px'/>
+                        <img src={song.songImg} width='200px' height='200px' />
                         <p className="songText">{`Title: ${song.title}`}</p>
                         <p className="songText">{`Artist: ${song.artist}`}</p>
                         <p className="songText">{`Genre: ${song.genre}`}</p>
@@ -32,6 +43,7 @@ function Splash() {
                             // autoPlay
                             controls
                         />
+                        {/* {loggedIn} */}
                     </a>
                 ))}
             </div>

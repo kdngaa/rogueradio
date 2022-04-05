@@ -7,7 +7,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Splash from './components/Splash';
 import UploadForm from './components/UploadForm'
-import { getSongs } from './store/song'
+// import { getSongs } from './store/song'
+import OneSong from'./components/SingleSongPage'
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path='/upload' >
             <UploadForm user={sessionUser} />
+          </Route>
+          <Route exact path='/songs/:songId' >
+            <OneSong />
           </Route>
         </Switch>
       )}

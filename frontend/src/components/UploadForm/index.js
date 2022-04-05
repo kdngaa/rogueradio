@@ -65,7 +65,7 @@ function Upload() {
                     required
                     className="fieldText"
                 />
-                <label className="fileHead">MP3/MP4</label>
+                <label className="fileHead">Please use Cloudinary for your MP3/MP4 files</label>
                 <input
                     type="text"
                     placeholder="MP3/MP4"
