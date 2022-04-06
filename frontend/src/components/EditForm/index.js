@@ -2,36 +2,36 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import './EditForm.css'
 import { useHistory, useParams } from "react-router-dom";
-import {updateSong} from "../../store/song";
+import { updateSong } from "../../store/song";
 
-function EditSong() {
+function EditSong({ song }) {
     const { songId } = useParams();
-    const dispatch = useDispatch()
-    const history = useHistory()
-    const [title, setTitle] = useState("")
-    const [artist, setArtist] = useState("")
-    const [genre, setGenre] = useState("")
-    const [songImg, setSongImg] = useState("")
-    const [audioFile, setAudioFile] = useState("")
-
     const sessionUser = useSelector((state) => state.session.user)
     const songs = useSelector((state) => state.song)
+    song = songs[+songId]
+    const dispatch = useDispatch()
+    const history = useHistory()
+    const [title, setTitle] = useState(song.title)
+    const [artist, setArtist] = useState(song.artist)
+    const [genre, setGenre] = useState(song.genre)
+    const [songImg, setSongImg] = useState(song.songImg)
+    const [audioFile, setAudioFile] = useState(song.audioFile)
 
-    const song = songs[+songId]
+
 
     if (!sessionUser) {  //if user is not log in, form will not show
         return null;
     }
 
 
-    
+
 
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const payload = { ...song, userId:sessionUser.id, title, artist, genre, songImg, audioFile }
+        const payload = { ...song, userId: sessionUser.id, title, artist, genre, songImg, audioFile }
 
         await dispatch(updateSong(payload))
 

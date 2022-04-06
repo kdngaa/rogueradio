@@ -6,6 +6,14 @@ const { Song, User, Like, Comment } = require('../../db/models');
 
 
 
+//GET ALL COMMENTS
+router.get('/', asyncHandler(async(req, res) => {
+    const getAllComments = await Comment.findAll();
+    return res.json(getAllComments)
+}))
+
+
+
 
 //GET SPECIFIC COMMENT BY ID
 router.get('/:id(\\d+)', asyncHandler( async(req, res) =>{
