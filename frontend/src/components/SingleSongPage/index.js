@@ -1,37 +1,42 @@
 import { getSongs } from "../../store/song";
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useHistory, useParams } from "react-router-dom";
 import './SingleSongPage.css';
 import { useDispatch, useSelector } from "react-redux";
 import ReactAudioPlayer from 'react-audio-player';
-
+import { removeASong } from "../../store/song";
 
 function OneSong() {
     const { songId } = useParams();
-    const songs = useSelector((state) => state.song)
-    const song = songs[+songId]
+    const song = useSelector((state) => state.song[songId])
+    // const song = songs[+songId]
     const dispatch = useDispatch()
     const sessionUser = useSelector((state) => state.session.user)
+    const history = useHistory()
 
-    useEffect(() => {
-        dispatch(getSongs())
-    }, [dispatch])
+
+    // useEffect(() => {
+    // dispatch(getSongs())
+    // }, [dispatch])
 
 
     let loggedIn;
     if (sessionUser) {
-
-        loggedIn = (
-            <>
-                <button>
-                    Edit Song
-                </button>
-                <button>
-                    Delete Song
-                </button>
-            </>
-        )
-
+        if (song) {
+            loggedIn = (
+                <>
+                    <NavLink to={`/songs/${song.id}/edit`}>
+                        Edit Song
+                    </NavLink>
+                    <button onClick={(e) => {
+                        dispatch(removeASong(song.id))
+                        return history.push('/')
+                    }}>
+                        Delete Song
+                    </button>
+                </>
+            )
+        }
     }
 
 

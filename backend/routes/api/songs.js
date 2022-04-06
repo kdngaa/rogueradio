@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
+const db = require('../../db/models');
 const { Song, User, Like, Comment } = require('../../db/models');
 
 
@@ -38,5 +39,34 @@ router.post('/', asyncHandler( async(req, res) =>{
      return res.json({ newSong });
 }))
 
+
+
+
+// UPDATE/EDIT A SONG
+router.put('/:id(\\d+)', asyncHandler( async(req,res) => {
+    const id = parseInt(req.params.id, 10)
+    const song = await db.Song.findByPk(id)
+
+    const {userId, title, artist, genre, songImg, audioFile} = req.body;
+    const updatedSong = await song.update({
+        userId, title, artist, genre, songImg, audioFile
+    })
+    await updatedSong.save()
+    return res.json(updatedSong)
+}))
+
+
+
+
+
+//REMOVE A SONG
+router.delete('/:id(\\d+)' ,asyncHandler( async(req,res) => {
+    const id = parseInt(req.params.id, 10)
+    const song = await db.Song.findByPk(id)
+
+
+   const deletedSong = await song.destroy();
+    return res.json(deletedSong);
+}))
 
 module.exports = router;

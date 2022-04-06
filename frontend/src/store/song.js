@@ -4,6 +4,9 @@ const LOAD_SONGS = 'songs/load'
 
 const ADD_SONG = 'songs/addSong'
 
+
+const REMOVE_SONG = 'songs/removeSong'
+
 // const GET_SONG = 'songs/getSong'
 
 const load = songs => ({
@@ -18,6 +21,18 @@ const addSong = song => {
         song
     }
 }
+
+
+const removeSong = song => {
+    return {
+        type: REMOVE_SONG,
+        song
+    }
+}
+
+
+
+
 
 
 // const getSong = song =>{
@@ -59,12 +74,44 @@ export const postSong = (song) => async dispatch => {
 
 
 // GET ONE SONG BY ID
-export const getSongById = id => async(dispatch) => {
-    const res = await fetch (`/api/songs/${id}`)
+export const getSongById = id => async (dispatch) => {
+    const res = await fetch(`/api/songs/${id}`)
 
     const info = await res.json()
     dispatch(load(info))
     return res
+}
+
+
+
+
+//UPDATE SONG
+export const updateSong = song => async dispatch => {
+    const res = await csrfFetch(`/api/songs/${song.id}`, {
+        method: "PUT",
+        body: JSON.stringify(song)
+    });
+
+
+    if (res.ok) {
+        const updatedSong = await res.json();
+        dispatch(addSong(updatedSong));
+        return updatedSong;
+    }
+}
+
+
+
+//REMOVE SONG
+export const removeASong = id => async dispatch => {
+    const res = await csrfFetch(`/api/songs/${id}`, {
+        method: 'DELETE',
+    });
+
+    if (res.ok) {
+        dispatch(removeSong(id));
+        return;
+    }
 }
 
 
@@ -98,17 +145,11 @@ const songReducer = (state = initialState, action) => {
 
         case ADD_SONG:
             newState = { ...state, [action.song.id]: action.song }
-            return newState
-        // case GET_SONG:
-        //     const getSong = {}
-        //     action.songs.forEach(song => {
-        //         getSong[song.id] = song
-        //     })
-
-        //     return {
-        //         ...getSong,
-        //         ...state.songs
-        //     }
+            return newState;
+        case REMOVE_SONG:
+            newState = { ...state }
+            delete newState[action.payload]
+            return { ...newState }
         default:
             return state
     }

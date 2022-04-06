@@ -6,15 +6,19 @@ import SignupFormPage from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Splash from './components/Splash';
-import UploadForm from './components/UploadForm'
-// import { getSongs } from './store/song'
-import OneSong from'./components/SingleSongPage'
+import UploadForm from './components/UploadForm';
+import { getSongs } from './store/song'
+import OneSong from './components/SingleSongPage';
+import EditSong from './components/EditForm';
+
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const songs = useSelector((state) => state.song)
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-    // dispatch(getSongs())
+    dispatch(getSongs())
   }, [dispatch]);
   const sessionUser = useSelector(state => state.session.user)
 
@@ -28,13 +32,16 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route exact path='/'>
-            <Splash />
+            <Splash songs={songs}/>
           </Route>
           <Route path='/upload' >
             <UploadForm user={sessionUser} />
           </Route>
           <Route exact path='/songs/:songId' >
             <OneSong />
+          </Route>
+          <Route exact path='/songs/:songId/edit' >
+            <EditSong />
           </Route>
         </Switch>
       )}
