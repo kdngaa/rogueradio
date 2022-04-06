@@ -16,3 +16,12 @@ color: black;
 font-weight: bolder;
 text-decoration: none;
 }
+
+
+.editBtn{
+  border-radius: 10px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

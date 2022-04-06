@@ -26,7 +26,7 @@ function OneSong() {
             loggedIn = (
                 <>
                     <NavLink to={`/songs/${song.id}/edit`}>
-                        Edit Song
+                        <button className="editBtn">Edit Song</button>
                     </NavLink>
                     <button onClick={(e) => {
                         dispatch(removeASong(song.id))
