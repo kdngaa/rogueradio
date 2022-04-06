@@ -5,22 +5,36 @@ import './SingleSongPage.css';
 import { useDispatch, useSelector } from "react-redux";
 import ReactAudioPlayer from 'react-audio-player';
 import { removeASong } from "../../store/song";
-import { removeAComment, postComment, getCommentById } from "../../store/comment";
-
+import { removeAComment, postComment, getCommentById, getComments } from "../../store/comment";
+import PostComment from "../PostCommentForm";
 
 
 function OneSong() {
     const { songId } = useParams();
     const song = useSelector((state) => state.song[songId])
+
+    const comments = useSelector((state) => Object.values(state.comment))
+    console.log(comments)
     // const song = songs[+songId]
     const dispatch = useDispatch()
     const sessionUser = useSelector((state) => state.session.user)
     const history = useHistory()
+    // const songInfo = Object.values(song)
+
+    //get the comment of that song by using the ID
+    // const commentOfOneSong = comments.find(comment => {
+    //     if (comment.songId === parseInt(songId)) {
+    //         return { comment }
+    //     }
+    // })
 
 
-    // useEffect(() => {
-    // dispatch(getSongs())
-    // }, [dispatch])
+
+
+    useEffect(() => {
+        dispatch(getComments())
+        dispatch(getCommentById(songId))
+    }, [dispatch])
 
 
     let loggedIn;
@@ -48,7 +62,7 @@ function OneSong() {
         <>
             <h1>Song Info</h1>
             {song && (<div className="singlePage">
-                <img src={song.songImg} width='200px' height='200px' className="songImg" />
+                <img src={song.songImg} width='450px' height='450px' className="songImg" />
                 <ReactAudioPlayer
                     src={`${song.audioFile}`}
                     controls
@@ -56,8 +70,22 @@ function OneSong() {
                 <p className="songText">{`Title: ${song.title}`}</p>
                 <p className="songText">{`Artist: ${song.artist}`}</p>
                 <p className="songText">{`Genre: ${song.genre}`}</p>
+                <PostComment song={song} />
                 {sessionUser.id === song.userId && loggedIn}
             </div>)}
+            <div>
+                <h2>COMMENTS</h2>
+                {/* {songInfo.map((song, idx) => (
+                    <>
+                        {song?.Comments?.map(comment => {
+                            <>
+                                <p>{comment.User.username}</p>
+                            </>
+                        })}
+
+                    </>
+                ))} */}
+            </div>
         </>
     )
 }

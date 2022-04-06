@@ -9,7 +9,7 @@ const { Song, User, Like, Comment } = require('../../db/models');
 //GET ALL COMMENTS
 router.get('/', asyncHandler(async(req, res) => {
     const getAllComments = await Comment.findAll();
-    return res.json(getAllComments)
+    return res.json({getAllComments})
 }))
 
 
@@ -20,7 +20,8 @@ router.get('/:id(\\d+)', asyncHandler( async(req, res) =>{
     // const commentId = req.params.id;
     const songId = parseInt(req.params.songId, 10)
     const currentComment = await Comment.findAll({
-        where: { songId }
+        where: { songId },
+        include: [{model: Song}, {model: User}]
     })
 
     return res.json(currentComment)

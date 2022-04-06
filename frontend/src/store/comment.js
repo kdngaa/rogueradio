@@ -9,10 +9,12 @@ const REMOVE_COMMENT = 'comments/removeComment'
 
 
 
-const load = comments => ({
-    type: LOAD_COMMENTS,
-    comments
-})
+const load = comments => {
+    return {
+        type: LOAD_COMMENTS,
+        comments
+    }
+}
 
 
 const addComment = comment => {
@@ -33,13 +35,15 @@ const removeComment = comment => {
 
 
 
-//GET ALL COMMENTS
+// //GET ALL COMMENTS
 export const getComments = () => async dispatch => {
     const res = await csrfFetch('/api/comments')
 
     if (res.ok) {
         const comments = await res.json()
+        console.log(comments)
         dispatch(load(comments))
+        // console.log(res)
         return res
     }
 }
@@ -66,7 +70,7 @@ export const postComment = (comment) => async dispatch => {
 
 
 
-// GET COMMENT BY ID
+// // GET COMMENT BY ID
 export const getCommentById = id => async (dispatch) => {
     const res = await fetch(`/api/comments/${id}`)
 
@@ -94,14 +98,15 @@ export const removeAComment = id => async dispatch => {
 
 
 // COMMENTS REDUCER
-const initialState = { comments: [] }
-const commentReducer = (state = initialState, action) => {
+// const initialState = { comments: [] }
+const commentReducer = (state = [], action) => {
     let newState;
     switch (action.type) {
         case LOAD_COMMENTS:
 
             const getComments = {}
             action.comments.forEach(comment => {
+                console.log(comment)
                 getComments[comment.id] = comment
             })
 

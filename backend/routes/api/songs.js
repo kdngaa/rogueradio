@@ -17,12 +17,14 @@ router.get('/', asyncHandler( async(req, res) => {
 
 
 
-// GET 1 SPECIFIC SONG BY ID
+// GET 1 SPECIFIC SONG BY ID  //CHECK AGAIN
 router.get('/:id(\\d+)', asyncHandler( async(req, res) =>{
-        const songId = req.params.id;
-        const currentSong = await Song.findByPk(songId)
+    const id = parseInt(req.params.id, 10)
+    const song = await Song.findByPk(id,{
+        include: [db.User, {model: db.Comment, include: db.User}]
+    })
 
-        return res.json(currentSong)
+    return res.json(song)
 }))
 
 
@@ -36,7 +38,7 @@ router.post('/', asyncHandler( async(req, res) =>{
     const newSong = await Song.create({
         userId, title, artist, genre, songImg, audioFile
     })
-     return res.json({ newSong });
+     res.json({ newSong });
 }))
 
 
@@ -52,7 +54,7 @@ router.put('/:id(\\d+)', asyncHandler( async(req,res) => {
         userId, title, artist, genre, songImg, audioFile
     })
     await updatedSong.save()
-    return res.json(updatedSong)
+    res.json(updatedSong)
 }))
 
 
