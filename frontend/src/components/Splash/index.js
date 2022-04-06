@@ -33,7 +33,7 @@ function Splash() {
                     //     }
                     // }
                     <a href={`/songs/${song.id}`} key={idx}>
-                        <img src={song.songImg} width='200px' height='200px' />
+                        <img src={song.songImg} width='100px' height='100px' />
                         <p className="songText">{`Title: ${song.title}`}</p>
                         <p className="songText">{`Artist: ${song.artist}`}</p>
                         <p className="songText">{`Genre: ${song.genre}`}</p>

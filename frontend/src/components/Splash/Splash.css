@@ -19,7 +19,8 @@
   -webkit-box-shadow:0 0 20px #1DB954;
 -moz-box-shadow: 0 0 20px #1DB954;
 box-shadow:0 0 20px #1DB954;
-color: white;
+color: black;
+font-weight: bolder;
 text-decoration: none;
 }
 
@@ -67,3 +68,9 @@ text-decoration: none;
   margin-top: 10px;
   font-style: italic;
 }
+
+
+/* .songText{
+  float:right;
+
+} */

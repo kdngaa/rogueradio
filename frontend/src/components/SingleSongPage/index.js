@@ -45,7 +45,7 @@ function OneSong() {
         <>
             {song && (<div>
                 <h1>Song Info</h1>
-                <img src={song.songImg} width='200px' height='200px' />
+                <img src={song.songImg} width='100px' height='100px' />
                 <p className="songText">{`Title: ${song.title}`}</p>
                 <p className="songText">{`Artist: ${song.artist}`}</p>
                 <p className="songText">{`Genre: ${song.genre}`}</p>

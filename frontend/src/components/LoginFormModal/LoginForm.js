@@ -13,6 +13,14 @@ function LoginForm() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
 
+
+  const demo = () =>{
+    setCredential('Demo-lition');
+    setPassword('password');
+    return;
+  }
+
+
   if (sessionUser) return (
     <Redirect to="/" />
   );
@@ -56,6 +64,8 @@ function LoginForm() {
             />
           </label>
           <button type="submit" className="logIn-btn grow">Enter RogueRadio</button>
+          <button type="submit" className="demoBtn" onClick={demo}>Demo Login</button>
+
         </form>
       </div>
     </div>
