@@ -20,7 +20,7 @@ function Splash() {
 
     return (
         <>
-            <h1> Welcome to Rogue Radio</h1>
+            <img src="RogueRadio.png" alt="image" className='logo'/>
             <div className='songCard' >
                 {songInfo.map((song, idx) => (
                     // let loggedIn;
@@ -33,16 +33,16 @@ function Splash() {
                     //     }
                     // }
                     <a href={`/songs/${song.id}`} key={idx}>
-                        <img src={song.songImg} width='100px' height='100px' />
-                        <p className="songText">{`Title: ${song.title}`}</p>
-                        <p className="songText">{`Artist: ${song.artist}`}</p>
-                        <p className="songText">{`Genre: ${song.genre}`}</p>
-                        {/* <p>{`${song.songImg}`}</p> */}
-                        <ReactAudioPlayer
+                        <img src={song.songImg} width='130px' height='130px' className="songImg" />
+                        {/* <p className="songText"><ReactAudioPlayer
                             src={`${song.audioFile}`}
                             // autoPlay
                             controls
-                        />
+                        /></p> */}
+                        {/* <p className="songText">{`Title: ${song.title}`}</p>
+                        <p className="songText">{`Artist: ${song.artist}`}</p>
+                        <p className="songText">{`Genre: ${song.genre}`}</p> */}
+                        {/* <p>{`${song.songImg}`}</p> */}
                         {/* {loggedIn} */}
                     </a>
                 ))}

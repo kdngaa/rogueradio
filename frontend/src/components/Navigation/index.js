@@ -14,7 +14,7 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <ProfileButton user={sessionUser} />
-        <NavLink to="/upload" user={sessionUser}> Upload </NavLink>
+        <NavLink to="/upload" user={sessionUser} className="uploadBtn"> + Upload Song</NavLink>
       </>
     );
   } else {
@@ -29,8 +29,8 @@ function Navigation({ isLoaded }) {
 
   return (
 
-    <div className='homeBtn'>
-      <NavLink exact to="/">Home</NavLink>
+    <div>
+      <NavLink exact to="/" ><img src="homebutton.png" alt="image" className='homeBtn' /></NavLink>
       {isLoaded && sessionLinks}
     </div>
 
