@@ -68,7 +68,7 @@ function OneSong() {
 
     return (
         <>
-            <h1>Song Info</h1>
+            <h1 className="songInfoHeader">Song Info</h1>
             {song && (<div className="singlePage">
                 <img src={song.songImg} width='450px' height='450px' className="songImg1" />
                 <ReactAudioPlayer
@@ -81,16 +81,17 @@ function OneSong() {
                 <PostComment song={song} />
                 {sessionUser.id === song.userId && loggedIn}
             </div>)}
-            <div>
+            <div className="commentSection">
                 <h2>COMMENTS</h2>
                 {comments.map((comment, idx) => (
-
                     <>
-                        <p className="commentSection">{comment.User.username} said:</p>
-                        <p key={idx} className="commentSection">{comment.content}</p>
+                        <div className="subComment">
+                            <p className="commentCreator">{comment.User.username} said:</p>
+                            <p key={idx} className="commentContent">{comment.content}</p>
+                        </div>
                         <div>
                             {sessionUser.id === comment.userId && (
-                                <button className="deleteBtn grow" onClick={(e) => dispatch(removeAComment(comment.id))}>Delete Comment</button>
+                                <button className="deleteBtn grow" onClick={(e) => dispatch(removeAComment(comment.id))}>Remove Comment</button>
                             )}
                         </div>
                     </>

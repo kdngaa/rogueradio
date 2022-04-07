@@ -50,11 +50,11 @@ function EditSong({ song }) {
     if (!sessionUser) {  //if user is not log in, form will not show
         return null;
     }
-    
+
 
     return (
         <section>
-            <form className="postCommentForm" onSubmit={handleSubmit}>
+            <form className="uploadSongForm" onSubmit={handleSubmit}>
                 <ul className="errors">
                     {errors.map((error, indx) => (
                         <li key={indx}>

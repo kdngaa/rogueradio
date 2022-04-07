@@ -14,7 +14,7 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <ProfileButton user={sessionUser} />
-        <NavLink to="/upload" user={sessionUser} className="uploadBtn"> + Upload Song</NavLink>
+        <NavLink to="/upload" user={sessionUser} className="uploadBtn">+ Upload Song</NavLink>
       </>
     );
   } else {

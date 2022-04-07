@@ -22,8 +22,8 @@ function Splash() {
         <>
             <img src="RogueRadio.png" alt="image" className='logo' />
             <>
+                <input type="text" placeholder="Search.." className="searchBar"></input>
                 <h1 className="heading1">This Week's Top Streams</h1>
-
                 <div className='songCard' >
                     {songInfo.map((song, idx) => (
                         <a href={`/songs/${song.id}`} key={idx}>

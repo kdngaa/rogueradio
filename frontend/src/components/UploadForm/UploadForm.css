@@ -1,3 +1,32 @@
 .errors{
     color: red;
 }
+
+
+.uploadBtn{
+    position: absolute;
+    align-items: center;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 30px;
+    border: 2px solid #24252A;
+    text-decoration: none;
+    padding: 1%;
+}
+
+
+.uploadSongForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 620px;
+    padding: 50px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 20px #1DB954;
+    -moz-box-shadow: 0 0 20px #1DB954;
+    box-shadow: 0 0 20px #1DB954;
+    margin-top: 10%;
+  }

@@ -1,7 +1,7 @@
-.singlePage{
-    display: flex;
+.singlePage {
+  display: flex;
   flex-wrap: wrap;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   margin: 25px;
@@ -9,42 +9,55 @@
   padding: 20px;
   float: left;
   border-radius: 18px;
-  -webkit-box-shadow:0 0 20px #1DB954;
--moz-box-shadow: 0 0 20px #1DB954;
-box-shadow:0 0 20px #1DB954;
-color: black;
-font-weight: bolder;
-text-decoration: none;
+  -webkit-box-shadow: 0 0 20px #1DB954;
+  -moz-box-shadow: 0 0 20px #1DB954;
+  box-shadow: 0 0 20px #1DB954;
+  color: black;
+  font-weight: bolder;
+  text-decoration: none;
 }
 
 
-.editBtn{
+.editBtn {
   border-radius: 10px;
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 220px;
+  background-color: lightblue;
 }
 
 
-/* .commentSection{
-	display:flex;
-  background-color:red;
-  padding:20px;
-  border-radius:30px;
-  min-width:40px;
-  max-width:220px;
-  min-height:40px;
-  margin:20px;
-  position:relative;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-} */
-.songImg1{
+.commentSection {
+  display: flexbox;
+  position: absolute;
+  right: 0;
+  margin-right: 31%;
+  margin-top: 10%;
+}
+
+
+.songImg1 {
   border: 1px solid black;
   margin: 1rem;
   padding: 2rem 2rem;
   text-align: center;
   justify-content: center;
+}
+
+.commentCreator {
+  font-weight: bolder;
+  color: #EE82EE;
+}
+
+
+.songInfoHeader{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  margin-left: 1.5%;
+  margin-top: 1.5%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }

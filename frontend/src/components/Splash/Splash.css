@@ -1,14 +1,14 @@
-.splash{
-    align-items: center;
-    display: flex;
-    justify-content: center;
+.splash {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 
-.songCard a{
+.songCard a {
   display: flex;
   flex-wrap: wrap;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   margin: 25px;
@@ -17,48 +17,34 @@
   padding: 20px;
   float: left;
   border-radius: 18px;
-  -webkit-box-shadow:0 0 20px #1DB954;
--moz-box-shadow: 0 0 20px #1DB954;
-box-shadow:0 0 20px #1DB954;
-color: black;
-font-weight: bolder;
-text-decoration: none;
+  -webkit-box-shadow: 0 0 20px #1DB954;
+  -moz-box-shadow: 0 0 20px #1DB954;
+  box-shadow: 0 0 20px #1DB954;
+  color: black;
+  font-weight: bolder;
+  text-decoration: none;
 }
 
 
-.uploadSongForm{
-  display: flex;
-  flex-direction: column;
+
+.uploadBtn {
   justify-content: center;
   align-items: center;
-  margin: 20px 620px;
-  padding: 50px;
-  border-radius: 10px;
-  -webkit-box-shadow:0 0 20px #1DB954;
-  -moz-box-shadow: 0 0 20px #1DB954;
-  box-shadow:0 0 20px #1DB954;
+  background-color: #1DB954;
+  color: white;
+  margin-top: 5px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15pt;
+  font-weight: 700;
+  transition: 1s;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 28px;
 }
 
-
-.uploadBtn{
-  width:fit-content;
-    justify-content: center;
-    align-items: center;
-    background-color: 	#1DB954;
-    color: white;
-    margin-top: 5px;
-    border-radius: 20px;
-    border: none;
-    font-size: 15pt;
-    font-weight: 700;
-    transition: 1s;
-    outline: none;
-    cursor: pointer;
-    margin-bottom: 20px;
-    margin-top: 28px;
-}
-
-.fileBtn{
+.fileBtn {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -66,14 +52,14 @@ text-decoration: none;
 }
 
 
-.fileHead{
+.fileHead {
   margin-top: 10px;
   font-style: italic;
 }
 
 
 
-.songImg{
+.songImg {
   border: 1px solid black;
   margin: 1rem;
   padding: 2rem 2rem;
@@ -82,34 +68,45 @@ text-decoration: none;
 }
 
 
-.songText{
+.songText {
   margin-top: 5%;
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
-.logo{
-  width: 275px;
-  height: 275px;
+.logo {
+  width: 200px;
+  height: 200px;
   position: absolute;
   top: 0px;
   left: 0px;
 }
 
 
-.heading1{
+.heading1 {
   margin-top: 15%;
   align-items: center;
   justify-content: space-around;
   display: flex;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bolder;
   font-size: 60px;
 }
 
 
-.wrapper{
+.wrapper {
   width: 90%;
   align-items: center;
+}
+
+
+.searchBar {
+  position: absolute;
+  top: 26%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 30px;
+  border: 2px solid #24252A;
 }

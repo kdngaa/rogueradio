@@ -36,7 +36,7 @@ function ProfileButton({ user }) {
         <i className="fas fa-user-circle" />
       </button>
       {showMenu && ( */}
-        <div className="profile-dropdown">
+        <div className="modalBtn">
           <h1>Hi, {user.username}</h1>
           <NavLink exact to="/" ><button onClick={logout} className='logOutBtn'>Log Out</button></NavLink>
         </div>

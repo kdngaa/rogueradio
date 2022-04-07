@@ -27,9 +27,22 @@
   margin-bottom: 20px;
 }
 
-.modalBtn a{
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #24252A;
+} */
+
+
+.modalBtn{
+  background-color: #24252A;
+  color: #edf0f1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 39%;
+  padding-top: 1%;
 }
 
 
