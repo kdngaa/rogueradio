@@ -8,8 +8,8 @@ const { Song, User, Like, Comment } = require('../../db/models');
 
 //GET ALL COMMENTS
 router.get('/', asyncHandler(async (req, res) => {
-    const getAllComments = await Comment.findAll();
-    return res.json({ getAllComments })
+    const comments = await Comment.findAll();
+    return res.json({comments})
 }))
 
 
@@ -23,7 +23,6 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
         where: { songId: id },
         include: [{ model: Song }, { model: User }]
     })
-    console.log(id, "============>")
 
     return res.json(currentComment)
 }))
@@ -52,7 +51,7 @@ router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
 
 
     const deletedComment = await comment.destroy();
-    res.json(deletedComment);
+    res.json(comment);
 }))
 
 module.exports = router;

@@ -40,7 +40,7 @@ function EditSong({ song }) {
 
     return (
         <section>
-            <form className="uploadSongForm" onSubmit={handleSubmit}>
+            <form className="postCommentForm" onSubmit={handleSubmit}>
                 <input
                     type="text"
                     placeholder="Title"

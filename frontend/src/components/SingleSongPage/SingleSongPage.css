@@ -41,3 +41,10 @@ text-decoration: none;
   justify-content:center;
   text-align:center;
 } */
+.songImg1{
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+  justify-content: center;
+}

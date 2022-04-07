@@ -34,7 +34,7 @@ function OneSong() {
         dispatch(postComment())
         dispatch(getComments())
         dispatch(getCommentById(songId))
-    }, [dispatch])
+    }, [dispatch, comments])
 
     if (!comments) {
         return null;
@@ -66,7 +66,7 @@ function OneSong() {
         <>
             <h1>Song Info</h1>
             {song && (<div className="singlePage">
-                <img src={song.songImg} width='450px' height='450px' className="songImg" />
+                <img src={song.songImg} width='450px' height='450px' className="songImg1" />
                 <ReactAudioPlayer
                     src={`${song.audioFile}`}
                     controls
@@ -82,7 +82,7 @@ function OneSong() {
                 {comments.map((comment, idx) => (
 
                     <>
-                        <p className="commentSection">{comment.User.username}</p>
+                        <p className="commentSection">{comment.User.username} said:</p>
                         <p key={idx} className="commentSection">{comment.content}</p>
                         <button className="deleteBtn grow" onClick={(e) => dispatch(removeAComment(comment.id))}>Delete Comment</button>
                     </>
