@@ -40,7 +40,7 @@ function OneSong() {
         return null;
     }
 
-    if(!sessionUser){
+    if (!sessionUser) {
         history.push('/')
     }
 
@@ -88,7 +88,11 @@ function OneSong() {
                     <>
                         <p className="commentSection">{comment.User.username} said:</p>
                         <p key={idx} className="commentSection">{comment.content}</p>
-                        <button className="deleteBtn grow" onClick={(e) => dispatch(removeAComment(comment.id))}>Delete Comment</button>
+                        <div>
+                            {sessionUser.id === comment.userId && (
+                                <button className="deleteBtn grow" onClick={(e) => dispatch(removeAComment(comment.id))}>Delete Comment</button>
+                            )}
+                        </div>
                     </>
                 ))}
             </div>

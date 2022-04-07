@@ -16,14 +16,22 @@ function EditSong({ song }) {
     const [genre, setGenre] = useState(song.genre)
     const [songImg, setSongImg] = useState(song.songImg)
     const [audioFile, setAudioFile] = useState(song.audioFile)
+    const [errors, setErrors] = useState([])
 
 
 
-    if (!sessionUser) {  //if user is not log in, form will not show
-        return null;
-    }
 
+    useEffect(() => {
+        const errors = []
 
+        if (!title) errors.push("Please provide song title")
+        if (!artist) errors.push("Please provide artist's name")
+        if (!genre) errors.push("Please provide song's genre")
+        if (!audioFile) errors.push("Please include a valid audio link")
+        if (songImg.length < 6) errors.push("Please include a valid image link")
+
+        setErrors(errors)
+    }, [title, artist, genre, audioFile, songImg])
 
 
 
@@ -38,9 +46,22 @@ function EditSong({ song }) {
         history.push('/') //redirect to home after updated
     }
 
+
+    if (!sessionUser) {  //if user is not log in, form will not show
+        return null;
+    }
+    
+
     return (
         <section>
             <form className="postCommentForm" onSubmit={handleSubmit}>
+                <ul className="errors">
+                    {errors.map((error, indx) => (
+                        <li key={indx}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
                 <input
                     type="text"
                     placeholder="Title"
@@ -82,7 +103,7 @@ function EditSong({ song }) {
                     required
                     className="fileBtn"
                 />
-                <button className="uploadBtn" type="Submit">Update Song</button>
+                <button className="uploadBtn" type="Submit" disabled={errors.length > 0}>Update Song</button>
             </form>
         </section>
     )

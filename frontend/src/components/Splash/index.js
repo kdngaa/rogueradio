@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ReactAudioPlayer from 'react-audio-player';
 import { getSongs } from '../../store/song.js'
 // import { NavLink, Route, useParams } from 'react-router-dom';
-import './Splash.css'
+import './Splash.css';
 
 function Splash() {
     const dispatch = useDispatch()
@@ -22,6 +22,8 @@ function Splash() {
         <>
             <img src="RogueRadio.png" alt="image" className='logo' />
             <>
+                <h1 className="heading1">This Week's Top Streams</h1>
+
                 <div className='songCard' >
                     {songInfo.map((song, idx) => (
                         <a href={`/songs/${song.id}`} key={idx}>
@@ -36,6 +38,7 @@ function Splash() {
                         </a>
                     ))}
                 </div>
+
 
             </>
         </>

@@ -12,7 +12,7 @@
   justify-content: center;
   align-content: center;
   margin: 25px;
-  margin-top: 11%;
+  margin-top: 5%;
   border: 20px;
   padding: 20px;
   float: left;
@@ -95,4 +95,21 @@ text-decoration: none;
   position: absolute;
   top: 0px;
   left: 0px;
+}
+
+
+.heading1{
+  margin-top: 15%;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bolder;
+  font-size: 60px;
+}
+
+
+.wrapper{
+  width: 90%;
+  align-items: center;
 }

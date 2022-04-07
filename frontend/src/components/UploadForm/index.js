@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import './UploadForm.css'
 import { postSong } from "../../store/song";
@@ -14,11 +14,29 @@ function Upload() {
     const [songImg, setSongImg] = useState("")
     const [audioFile, setAudioFile] = useState(null)
 
+    const [errors, setErrors] = useState([])
+
     const sessionUser = useSelector((state) => state.session.user)
 
-    if (!sessionUser) {  //if user is not log in, form will not show
-        return null;
-    }
+
+
+    useEffect(() => {
+        const errors = []
+
+        if (!title) errors.push("Please provide song title")
+        if (!artist) errors.push("Please provide artist's name")
+        if (!genre) errors.push("Please provide song's genre")
+        if (!audioFile) errors.push("Please include a valid audio link")
+        if (songImg.length < 6) errors.push("Please include a valid image link")
+
+        setErrors(errors)
+    }, [title, artist, genre, audioFile, songImg])
+
+
+    // if (!sessionUser) {  //if user is not log in, form will not show
+    //     return null;
+    // }
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -33,6 +51,13 @@ function Upload() {
     return (
         <section>
             <form className="uploadSongForm" onSubmit={handleSubmit}>
+                <ul className="errors">
+                    {errors.map((error, indx) => (
+                        <li key={indx}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
                 <input
                     type="text"
                     placeholder="Title"
@@ -74,7 +99,7 @@ function Upload() {
                     required
                     className="fileBtn"
                 />
-                <button className="uploadBtn" type="Submit">Post Song</button>
+                <button className="uploadBtn" type="Submit" disabled={errors.length > 0}>Post Song</button>
             </form>
         </section>
     )
