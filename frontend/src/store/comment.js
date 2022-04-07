@@ -40,7 +40,7 @@ export const getComments = () => async dispatch => {
     const res = await csrfFetch('/api/comments')
 
     if (res.ok) {
-        const comments = await res.json()
+        const { comments } = await res.json()
         console.log(comments)
         dispatch(load(comments))
         // console.log(res)

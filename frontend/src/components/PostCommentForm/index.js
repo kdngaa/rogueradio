@@ -13,17 +13,17 @@ function PostComment({ song }) {
     const [content, setContent] = useState("")
 
     const sessionUser = useSelector((state) => state.session.user)
-
+    console.log(sessionUser, "=====>")
     if (!sessionUser) {
         return null
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const comment = { userId: sessionUser, songId: song.id, content }
+        const comment = { userId: sessionUser.id, songId: song.id, content }
 
-        dispatch(postComment(comment))
+        await dispatch(postComment(comment))
 
         history.push(`/songs/${song.id}`)
         setContent("")

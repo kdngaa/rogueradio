@@ -14,7 +14,7 @@ function OneSong() {
     const song = useSelector((state) => state.song[songId])
 
     const comments = useSelector((state) => Object.values(state.comment))
-    console.log(comments)
+    console.log(comments, "==================================>")
     // const song = songs[+songId]
     const dispatch = useDispatch()
     const sessionUser = useSelector((state) => state.session.user)
@@ -32,6 +32,7 @@ function OneSong() {
 
 
     useEffect(() => {
+        dispatch(postComment())
         dispatch(getComments())
         dispatch(getCommentById(songId))
     }, [dispatch])
@@ -70,21 +71,23 @@ function OneSong() {
                 <p className="songText">{`Title: ${song.title}`}</p>
                 <p className="songText">{`Artist: ${song.artist}`}</p>
                 <p className="songText">{`Genre: ${song.genre}`}</p>
-                <PostComment song={song} />
                 {sessionUser.id === song.userId && loggedIn}
             </div>)}
             <div>
+                <PostComment song={song} />
                 <h2>COMMENTS</h2>
-                {/* {songInfo.map((song, idx) => (
+                {comments.map((comment, idx) => (
                     <>
-                        {song?.Comments?.map(comment => {
+                        <p>{comment.User.username}</p>
+                        <p key={idx}>{comment.content}</p>
+                        {/* {comment?.Comments?.map(comment => {
                             <>
                                 <p>{comment.User.username}</p>
                             </>
-                        })}
+                        })} */}
 
                     </>
-                ))} */}
+                ))}
             </div>
         </>
     )

@@ -7,22 +7,23 @@ const { Song, User, Like, Comment } = require('../../db/models');
 
 
 //GET ALL COMMENTS
-router.get('/', asyncHandler(async(req, res) => {
+router.get('/', asyncHandler(async (req, res) => {
     const getAllComments = await Comment.findAll();
-    return res.json({getAllComments})
+    return res.json({ getAllComments })
 }))
 
 
 
 
 //GET SPECIFIC COMMENT BY ID
-router.get('/:id(\\d+)', asyncHandler( async(req, res) =>{
+router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     // const commentId = req.params.id;
-    const songId = parseInt(req.params.songId, 10)
+    const id = parseInt(req.params.id, 10)
     const currentComment = await Comment.findAll({
-        where: { songId },
-        include: [{model: Song}, {model: User}]
+        where: { songId: id },
+        include: [{ model: Song }, { model: User }]
     })
+    console.log(id, "============>")
 
     return res.json(currentComment)
 }))
@@ -45,12 +46,12 @@ router.post('/', asyncHandler(async (req, res) => {
 
 
 //REMOVE A COMMENT
-router.delete('/:id(\\d+)' ,asyncHandler( async(req,res) => {
+router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
     const id = parseInt(req.params.id, 10)
     const comment = await db.Comment.findByPk(id)
 
 
-   const deletedComment = await comment.destroy();
+    const deletedComment = await comment.destroy();
     return res.json(deletedComment);
 }))
 
