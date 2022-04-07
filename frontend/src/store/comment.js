@@ -90,8 +90,8 @@ export const removeAComment = id => async dispatch => {
     });
 
     if (res.ok) {
-        dispatch(removeComment(id));
-        return;
+        const info = await res.json()
+        await dispatch(removeComment(info));
     }
 }
 

@@ -52,7 +52,7 @@ router.delete('/:id(\\d+)', asyncHandler(async (req, res) => {
 
 
     const deletedComment = await comment.destroy();
-    return res.json(deletedComment);
+    res.json(deletedComment);
 }))
 
 module.exports = router;

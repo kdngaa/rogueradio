@@ -68,7 +68,7 @@ router.delete('/:id(\\d+)' ,asyncHandler( async(req,res) => {
 
 
    const deletedSong = await song.destroy();
-    return res.json(deletedSong);
+res.json(deletedSong);
 }))
 
 module.exports = router;
