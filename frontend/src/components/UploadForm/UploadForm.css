@@ -1,20 +1,8 @@
-.errors{
+.errors {
     color: red;
 }
 
 
-.uploadBtn{
-    position: absolute;
-    align-items: center;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 180px;
-    height: 30px;
-    border: 2px solid #24252A;
-    text-decoration: none;
-    padding: 1%;
-}
 
 
 .uploadSongForm {
@@ -29,4 +17,11 @@
     -moz-box-shadow: 0 0 20px #1DB954;
     box-shadow: 0 0 20px #1DB954;
     margin-top: 10%;
-  }
+}
+
+
+.updateBtn{
+        background-color: #1DB954;
+        border-radius: 10px;
+        margin-top: 8%;
+}

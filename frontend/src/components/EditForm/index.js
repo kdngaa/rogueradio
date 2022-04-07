@@ -103,7 +103,7 @@ function EditSong({ song }) {
                     required
                     className="fileBtn"
                 />
-                <button className="uploadBtn" type="Submit" disabled={errors.length > 0}>Update Song</button>
+                <button className="editSongBtn" type="Submit" disabled={errors.length > 0}>Update Song</button>
             </form>
         </section>
     )

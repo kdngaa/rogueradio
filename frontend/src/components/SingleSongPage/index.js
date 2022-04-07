@@ -54,7 +54,9 @@ function OneSong() {
                         <button className="editBtn">Edit Song</button>
                     </NavLink>
                     <button className="deleteBtn" id="removeSongBtn" onClick={(e) => {
-                        dispatch(removeASong(song.id))
+                        if (() => window.confirm(`Are you sure you want to delete this song?`)) {
+                            dispatch(removeASong(song.id))
+                        }
                         return history.push('/')
                     }}>
                         Delete Song

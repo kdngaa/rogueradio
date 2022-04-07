@@ -99,7 +99,7 @@ function Upload() {
                     required
                     className="fileBtn"
                 />
-                <button className="uploadBtn" type="Submit" disabled={errors.length > 0}>Post Song</button>
+                <button className="updateBtn" type="Submit" disabled={errors.length > 0}>Post Song</button>
             </form>
         </section>
     )
