@@ -40,6 +40,10 @@ function OneSong() {
         return null;
     }
 
+    if(!sessionUser){
+        history.push('/')
+    }
+
 
     let loggedIn;
     if (sessionUser) {

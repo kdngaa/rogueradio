@@ -63,4 +63,7 @@
   height: 40px;
   margin-top: 2%;
   margin-left: 2%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }

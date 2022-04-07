@@ -23,7 +23,7 @@ function Upload() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const song = {userId:sessionUser.id, title, artist, genre, songImg, audioFile }
+        const song = { userId: sessionUser.id, title, artist, genre, songImg, audioFile }
 
         dispatch(postSong(song))
 

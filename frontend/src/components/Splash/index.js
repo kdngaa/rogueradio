@@ -20,35 +20,24 @@ function Splash() {
 
     return (
         <>
-            <img src="RogueRadio.png" alt="image" className='logo'/>
-            <div className='songCard' >
-                {songInfo.map((song, idx) => (
-                    // let loggedIn;
-                    // if (sessionUser) {
-                    //     if (sessionUser.id === song.userId) {
-                    //         loggedIn = (<div>
-                    //             <button>Edit Song</button>
-                    //             <button>Delete Song</button>
-                    //         </div>)
-                    //     }
-                    // }
-                    <a href={`/songs/${song.id}`} key={idx}>
-                        <img src={song.songImg} width='130px' height='130px' className="songImg" />
-                        {/* <p className="songText"><ReactAudioPlayer
-                            src={`${song.audioFile}`}
-                            // autoPlay
-                            controls
-                        /></p> */}
-                        {/* <p className="songText">{`Title: ${song.title}`}</p>
-                        <p className="songText">{`Artist: ${song.artist}`}</p>
-                        <p className="songText">{`Genre: ${song.genre}`}</p> */}
-                        {/* <p>{`${song.songImg}`}</p> */}
-                        {/* {loggedIn} */}
-                    </a>
-                ))}
-            </div>
+            <img src="RogueRadio.png" alt="image" className='logo' />
+            <>
+                <div className='songCard' >
+                    {songInfo.map((song, idx) => (
+                        <a href={`/songs/${song.id}`} key={idx}>
+                            <img src={song.songImg} width='200px' height='200px' className="songImg" />
+                            <p className="songText">{`Title: ${song.title}`}</p>
+                            <p className="songText"><ReactAudioPlayer
+                                src={`${song.audioFile}`}
+                                controls
+                            /></p>
+                            {/* <p className="songText">{`Artist: ${song.artist}`}</p>
+                            <p className="songText">{`Genre: ${song.genre}`}</p> */}
+                        </a>
+                    ))}
+                </div>
 
-
+            </>
         </>
     )
 }
