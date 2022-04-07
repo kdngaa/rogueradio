@@ -53,7 +53,7 @@ function OneSong() {
                     <NavLink to={`/songs/${song.id}/edit`}>
                         <button className="editBtn">Edit Song</button>
                     </NavLink>
-                    <button onClick={(e) => {
+                    <button className="deleteBtn" id="removeSongBtn" onClick={(e) => {
                         dispatch(removeASong(song.id))
                         return history.push('/')
                     }}>

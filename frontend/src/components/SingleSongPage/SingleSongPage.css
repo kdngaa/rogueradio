@@ -48,7 +48,8 @@
 
 .commentCreator {
   font-weight: bolder;
-  color: #EE82EE;
+  color: random();
+  font-size: 25px;
 }
 
 
@@ -60,4 +61,30 @@
   position: absolute;
   top: 0px;
   left: 0px;
+}
+
+.deleteBtn{
+  width: 150px;
+  border-radius: 10px;
+  background-color: coral;
+}
+
+#removeSongBtn{
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.commentContent{
+  max-width: 1000px;
+  border-radius: 20px;
+  margin: 10px auto;
+  background: black;
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+  font-family: arial;
+  position:relative;
 }
