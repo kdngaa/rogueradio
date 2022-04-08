@@ -1,8 +1,9 @@
 import './PostCommentForm.css'
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postComment } from "../../store/comment";
 import { useHistory } from 'react-router-dom';
+
 
 
 function PostComment({ song }) {
@@ -11,12 +12,25 @@ function PostComment({ song }) {
     // const [userId, setUserId] = useState("")
     // const [songId, setSongId] = useState("")
     const [content, setContent] = useState("")
+    const [errors, setErrors] = useState([])
 
     const sessionUser = useSelector((state) => state.session.user)
     console.log(sessionUser, "=====>")
+
+
+    useEffect(() => {
+        const errors = []
+
+        if (!content) errors.push("Please provide content")
+
+        setErrors(errors)
+    }, [content])
+
+
     if (!sessionUser) {
         return null
     }
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -32,12 +46,19 @@ function PostComment({ song }) {
     return (
         <section>
             <form onSubmit={handleSubmit}>
+                <ul className="errors">
+                    {errors.map((error, indx) => (
+                        <li key={indx}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
                 <input
                     onChange={(e) => setContent(e.target.value)}
                     value={content}
                     placeholder='Comment here...'
                 />
-                <button type="submit" className='commentBtn'>Submit Comment</button>
+                <button type="submit" className='commentBtn' disabled={errors.length > 0}>Submit Comment</button>
 
             </form>
         </section>

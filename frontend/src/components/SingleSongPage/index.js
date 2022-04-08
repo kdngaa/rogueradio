@@ -7,6 +7,7 @@ import ReactAudioPlayer from 'react-audio-player';
 import { removeASong } from "../../store/song";
 import { removeAComment, postComment, getCommentById, getComments } from "../../store/comment";
 import PostComment from "../PostCommentForm";
+import LoginFormModal from '../LoginFormModal';
 
 
 function OneSong() {
@@ -44,9 +45,10 @@ function OneSong() {
         return null;
     }
 
-    if (!sessionUser) {
-        history.push('/')
-    }
+    // if (!sessionUser) {
+    //     // history.push('/')
+    //     <LoginFormModal />
+    // }
 
 
     let loggedIn;
@@ -68,6 +70,9 @@ function OneSong() {
                 </>
             )
         }
+    } else {
+        window.alert(`Please Sign Up or Log In to Access This Page`)
+        history.push('/')
     }
 
 

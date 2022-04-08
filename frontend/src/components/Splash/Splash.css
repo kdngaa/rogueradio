@@ -70,7 +70,7 @@
 
 
 .heading1 {
-  margin-top: 15%;
+  margin-top: 25%;
   align-items: center;
   justify-content: space-around;
   display: flex;
@@ -88,10 +88,24 @@
 
 .searchBar {
   position: absolute;
-  top: 26%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
   height: 30px;
   border: 2px solid #24252A;
+}
+
+
+.gif{
+  margin-top: 20%;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
 }
