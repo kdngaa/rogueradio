@@ -46,8 +46,9 @@ function OneSong() {
     }
 
     // if (!sessionUser) {
-    //     // history.push('/')
-    //     <LoginFormModal />
+    //     // history.push('/signup')
+    //     // window.alert(`Please Sign Up or Log In to Access`)
+    //     // <LoginFormModal />
     // }
 
 
@@ -71,8 +72,8 @@ function OneSong() {
             )
         }
     } else {
-        window.alert(`Please Sign Up or Log In to Access This Page`)
         history.push('/')
+        window.alert(`Please Sign Up or Log In to Access`)
     }
 
 

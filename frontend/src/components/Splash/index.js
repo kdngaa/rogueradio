@@ -18,6 +18,8 @@ function Splash() {
     const songInfo = Object.values(songs)
 
 
+
+
     return (
         <>
             <img src="RogueRadio.png" alt="image" className='logo' />
