@@ -1,5 +1,5 @@
 # Rogue Radio
-Welcome to Rogue Radio, a clone of popular music platform "SoundCloud". Users of Rogue Radio are able to upload their favorite lofi/anime tracks from their favorite movie/tv shows.
+Welcome to Rogue Radio, a clone of popular music platform "SoundCloud". Users of Rogue Radio are able to upload music and comment on each other's posts.
 # Wiki
  * Feature List: https://github.com/kdngaa/rogueradio/wiki/Feature-List
  * Database Schema: https://github.com/kdngaa/rogueradio/wiki/Database-Schema
