@@ -18,8 +18,8 @@ function OneSong() {
     const dispatch = useDispatch()
     const sessionUser = useSelector((state) => state.session.user)
     const history = useHistory()
-    // const songInfo = Object.values(song)
 
+    // const songInfo = Object.values(song)
     //get the comment of that song by using the ID
     // const commentOfOneSong = comments.find(comment => {
     //     if (comment.songId === parseInt(songId)) {
@@ -27,7 +27,11 @@ function OneSong() {
     //     }
     // })
 
-
+    const handleDelete = async () => {
+        window.alert(`Are you sure you want to delete this song?`)
+        await dispatch(removeASong(song.id))
+        history.push("/")
+    }
 
 
     useEffect(() => {
@@ -53,12 +57,12 @@ function OneSong() {
                     <NavLink to={`/songs/${song.id}/edit`}>
                         <button className="editBtn">Edit Song</button>
                     </NavLink>
-                    <button className="deleteBtn" id="removeSongBtn" onClick={(e) => {
-                        if (() => window.confirm(`Are you sure you want to delete this song?`)) {
-                            dispatch(removeASong(song.id))
-                        }
-                        return history.push('/')
-                    }}>
+                    <button className="deleteBtn" id="removeSongBtn" onClick={handleDelete}
+                    //  window.alert(`Are you sure you want to delete this song?`)
+                    //     dispatch(removeASong(song.id))
+                    // handleDelete()
+                    // return history.push('/')
+                    >
                         Delete Song
                     </button>
                 </>
