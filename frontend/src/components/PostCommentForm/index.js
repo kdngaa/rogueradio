@@ -21,7 +21,7 @@ function PostComment({ song }) {
     useEffect(() => {
         const errors = []
 
-        if (!content) errors.push("Please provide content")
+        if (!content) errors.push("Please provide comment")
 
         setErrors(errors)
     }, [content])
