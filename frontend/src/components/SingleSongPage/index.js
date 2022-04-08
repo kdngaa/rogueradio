@@ -14,19 +14,11 @@ function OneSong() {
     const { songId } = useParams();
     const song = useSelector((state) => state.song[songId])
     const comments = useSelector((state) => Object.values(state.comment))
-    // console.log(comments, "==================================>")
-    // const song = songs[+songId]
     const dispatch = useDispatch()
     const sessionUser = useSelector((state) => state.session.user)
     const history = useHistory()
 
-    // const songInfo = Object.values(song)
-    //get the comment of that song by using the ID
-    // const commentOfOneSong = comments.find(comment => {
-    //     if (comment.songId === parseInt(songId)) {
-    //         return { comment }
-    //     }
-    // })
+
 
     const handleDelete = async () => {
         window.confirm(`Are you sure you want to delete this song?`)
@@ -45,11 +37,6 @@ function OneSong() {
         return null;
     }
 
-    // if (!sessionUser) {
-    //     // history.push('/signup')
-    //     // window.alert(`Please Sign Up or Log In to Access`)
-    //     // <LoginFormModal />
-    // }
 
 
     let loggedIn;
@@ -61,10 +48,6 @@ function OneSong() {
                         <button className="editBtn">Edit Song</button>
                     </NavLink>
                     <button className="deleteBtn" id="removeSongBtn" onClick={handleDelete}
-                    //  window.alert(`Are you sure you want to delete this song?`)
-                    //     dispatch(removeASong(song.id))
-                    // handleDelete()
-                    // return history.push('/')
                     >
                         Delete Song
                     </button>
@@ -74,6 +57,7 @@ function OneSong() {
     } else {
         history.push('/')
         window.alert(`Please Sign Up or Log In to Access`)
+        // <LoginFormModal />
     }
 
 
