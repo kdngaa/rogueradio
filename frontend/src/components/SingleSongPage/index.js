@@ -28,7 +28,7 @@ function OneSong() {
     // })
 
     const handleDelete = async () => {
-        window.alert(`Are you sure you want to delete this song?`)
+        window.confirm(`Are you sure you want to delete this song?`)
         await dispatch(removeASong(song.id))
         history.push("/")
     }
