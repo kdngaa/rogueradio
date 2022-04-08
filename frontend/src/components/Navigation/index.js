@@ -30,7 +30,7 @@ function Navigation({ isLoaded }) {
   return (
 
     <div>
-      <NavLink exact to="/" ><img src="homebutton.png" alt="image" className='homeBtn' /></NavLink>
+      <NavLink exact to="/" ><img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1649376919/homebutton_leh6mk.png" alt="image" className='homeBtn' /></NavLink>
       {isLoaded && sessionLinks}
     </div>
 
