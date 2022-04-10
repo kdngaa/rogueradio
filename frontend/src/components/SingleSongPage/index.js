@@ -55,8 +55,8 @@ function OneSong() {
             )
         }
     } else {
-        history.push('/')
         window.alert(`Please Sign Up or Log In to Access`)
+        history.push('/')
         // <LoginFormModal />
     }
 
@@ -64,6 +64,7 @@ function OneSong() {
 
     return (
         <>
+            <img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1649573482/normal_photo_1612372083_ogefid.gif" alt="gif" className='gif2' />
             <h1 className="songInfoHeader">Song Info</h1>
             {song && (<div className="singlePage">
                 <img src={song.songImg} width='450px' height='450px' className="songImg1" />

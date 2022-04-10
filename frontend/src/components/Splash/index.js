@@ -22,7 +22,7 @@ function Splash() {
     return (
         <>
             <img src="RogueRadio.png" alt="image" className='logo' />
-            <img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1649438209/d998yjs-cbde5b99-d8ed-409d-97a3-e2dc4807c12b_nasrae.gif" alt="gif" className='gif' />
+            <img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1649577828/47af824852bb6fb9f31e13d3e76a86be_b3zokp.gif" alt="gif" className='gif' />
             <>
                 <input type="text" placeholder="Search.." className="searchBar"></input>
                 <h1 className="heading1">This Week's Top Streams</h1>
