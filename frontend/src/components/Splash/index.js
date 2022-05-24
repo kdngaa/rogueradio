@@ -38,8 +38,6 @@ function Splash() {
                         </a>
                     ))}
                 </div>
-
-
             </>
         </>
     )
