@@ -15,7 +15,7 @@ function Splash() {
 
     useEffect(() => {
         dispatch(getSongs())
-    }, [dispatch, songs])
+    }, [dispatch])
 
 
 
