@@ -5,7 +5,7 @@
 }
 
 
-.songCard a {
+/* .songCard a {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -23,7 +23,7 @@
   color: black;
   font-weight: bolder;
   text-decoration: none;
-}
+} */
 
 
 
@@ -44,13 +44,13 @@
 
 
 
-.songImg {
+/* .songImg {
   border: 1px solid black;
   margin: 1rem;
   padding: 2rem 2rem;
   text-align: center;
   justify-content: center;
-}
+} */
 
 
 .songText {
@@ -58,7 +58,21 @@
   justify-content: center;
   align-items: center;
   display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
 }
+
+
+.songTextArtist {
+  margin-top: 5%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+
 
 .logo {
   width: 250px;
@@ -86,26 +100,31 @@
 }
 
 
-.searchBar {
-  position: absolute;
-  top: 16%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 30px;
-  border: 2px solid #24252A;
+
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
 
-.gif{
-  margin-top: 13%;
-  align-items: center;
-  justify-content: space-around;
-  display: flex;
-  position: absolute;
-  top: 8.5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 230px;
-  height: 200px;
+.swiper-slide img {
+  display: block;
+  width: 250px;
+}
+
+/*
+.swiper-wrapper {
+  width: 45%;
+} */
+
+.pagination{
+  padding-top: 5%;
 }

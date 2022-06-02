@@ -4,6 +4,17 @@ import ReactAudioPlayer from 'react-audio-player';
 import { getSongs } from '../../store/song.js'
 import './Splash.css';
 
+
+//import Swiper
+import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
+import { width } from "dom7";
+
+SwiperCore.use([EffectCoverflow, Pagination]);
+
+
 function Splash() {
     const dispatch = useDispatch()
 
@@ -22,24 +33,45 @@ function Splash() {
     return (
         <>
             <img src="RogueRadio.png" alt="image" className='logo' />
-            <img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1649573488/giphy_1_ddobk9.gif" alt="gif" className='gif' />
-            <>
-                <input type="text" placeholder="Search.." className="searchBar"></input>
-                <h1 className="heading1">This Week's Top Streams</h1>
-                <div className='songCard' >
-                    {songInfo.map((song, idx) => (
-                        <a href={`/songs/${song.id}`} key={idx}>
-                            <img src={song.songImg} width='200px' height='200px' className="songImg" />
-                            <p className="songText">{`Title: ${song.title}`}</p>
-                            <p className="songText"><ReactAudioPlayer
+
+            <h1 className="heading1">This Week's Top Streams</h1>
+            {/* <div className="topCards"> */}
+
+            <Swiper
+                effect={"coverflow"}
+                grabCursor={true}
+                spaceBetween={50}
+                slidesPerView={6}
+                centeredSlides
+                onSlideChange={() => console.log("slide change")}
+                onSwiper={swiper => console.log(swiper)}
+                coverflowEffect={{
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: false,
+                }}
+                pagination={true}
+                modules={[EffectCoverflow, Pagination]}
+                className="mySwiper"
+            >
+                {songInfo.map((song, idx) => (
+                    <SwiperSlide key={idx}>
+                        <img src={song.songImg} className="songImg" href={`/songs/${song.id}`} />
+                        <p className="songText">{`${song.title}`}</p>
+                        <p className="songTextArtist">{`${song.artist}`}</p>
+                        {/* <p className="songText"><ReactAudioPlayer
                                 src={`${song.audioFile}`}
                                 controls
-                            /></p>
-                        </a>
-                    ))}
-                </div>
-            </>
+                            /></p> */}
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+
+            {/* </div> */}
         </>
+
     )
 }
 
