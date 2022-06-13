@@ -10,7 +10,7 @@ import UploadForm from './components/UploadForm';
 import { getSongs } from './store/song'
 import OneSong from './components/SingleSongPage';
 import EditSong from './components/EditForm';
-
+// import ProtectedRoute from './components/auth/ProtectedRoute';
 
 function App() {
   const dispatch = useDispatch();

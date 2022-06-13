@@ -76,13 +76,13 @@ function Splash() {
             >
                 {songInfo.map((song, idx) => (
                     <SwiperSlide key={idx}>
-                        <img src={song.songImg} className="songImg" href={`/songs/${song.id}`} />
+                        <a href={`/songs/${song.id}`}>  <img src={song.songImg} className="songImg" /></a>
                         <p className="songText">{`${song.title}`}</p>
                         <p className="songTextArtist">{`${song.artist}`}</p>
-                        <p className="songText"><ReactAudioPlayer
-                                src={`${song.audioFile}`}
-                                controls
-                            /></p>
+                        {/* <p className="songText"><ReactAudioPlayer
+                            src={`${song.audioFile}`}
+                            controls
+                        /></p> */}
                     </SwiperSlide>
                 ))}
             </Swiper>
