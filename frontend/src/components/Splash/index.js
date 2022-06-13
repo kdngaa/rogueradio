@@ -6,13 +6,20 @@ import './Splash.css';
 
 
 //import Swiper
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { EffectCoverflow, Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide, Autoplay } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-import { width } from "dom7";
+
+
+
 
 SwiperCore.use([EffectCoverflow, Pagination]);
+
+
+
+
+
 
 
 function Splash() {
@@ -24,6 +31,12 @@ function Splash() {
     console.log(songs)
     const songInfo = Object.values(songs)
 
+
+
+
+
+
+
     useEffect(() => {
         dispatch(getSongs())
     }, [dispatch])
@@ -33,6 +46,11 @@ function Splash() {
     return (
         <>
             <img src="RogueRadio.png" alt="image" className='logo' />
+
+
+
+
+
 
             <h1 className="heading1">This Week's Top Streams</h1>
             {/* <div className="topCards"> */}
@@ -61,10 +79,10 @@ function Splash() {
                         <img src={song.songImg} className="songImg" href={`/songs/${song.id}`} />
                         <p className="songText">{`${song.title}`}</p>
                         <p className="songTextArtist">{`${song.artist}`}</p>
-                        {/* <p className="songText"><ReactAudioPlayer
+                        <p className="songText"><ReactAudioPlayer
                                 src={`${song.audioFile}`}
                                 controls
-                            /></p> */}
+                            /></p>
                     </SwiperSlide>
                 ))}
             </Swiper>
