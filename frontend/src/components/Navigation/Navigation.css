@@ -36,14 +36,8 @@
 
 
 .modalBtn{
-  background-color: #24252A;
-  font-size: 10px;
-  color: #edf0f1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 39%;
-  padding-top: 1%;
+ display: flex;
+justify-content:space-evenly;
 }
 
 

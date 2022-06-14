@@ -45,13 +45,9 @@ function Splash() {
 
     return (
         <>
-            <img src="RogueRadio.png" alt="image" className='logo' />
-
-
-
-
-
-
+            <div className="carousel">
+                {/* <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600"/> */}
+            </div>
             <h1 className="heading1">This Week's Top Streams</h1>
             {/* <div className="topCards"> */}
 

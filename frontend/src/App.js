@@ -1,7 +1,7 @@
 // frontend/src/App.js
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter,Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormModal";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
@@ -11,6 +11,7 @@ import { getSongs } from './store/song'
 import OneSong from './components/SingleSongPage';
 import EditSong from './components/EditForm';
 // import ProtectedRoute from './components/auth/ProtectedRoute';
+
 
 function App() {
   const dispatch = useDispatch();

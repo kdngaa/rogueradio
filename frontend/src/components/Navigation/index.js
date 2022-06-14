@@ -22,6 +22,9 @@ function Navigation({ isLoaded }) {
       <div className='modalBtn'>
         <a><LoginFormModal /></a>
         <a><SignUpFormModal /></a>
+        <a href="https://github.com/kdngaa">
+          <img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1652609758/128-1280464_github-icon-download-at-icons8-github-icon-white-removebg-preview_qqz2dz.png" style={{ width: '40px', height: '40px' }} />
+        </a>
         {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </div>
     );
@@ -30,7 +33,7 @@ function Navigation({ isLoaded }) {
   return (
 
     <div>
-      <NavLink exact to="/" ><img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1649376919/homebutton_leh6mk.png" alt="image" className='homeBtn' /></NavLink>
+      {/* <NavLink exact to="/" ><img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1649376919/homebutton_leh6mk.png" alt="image" className='homeBtn' /></NavLink> */}
       {isLoaded && sessionLinks}
     </div>
 
