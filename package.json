@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/kdngaa/staycation#readme",
   "dependencies": {
+    "react-wavy-audio": "^1.0.3",
     "reactjs-popup": "^2.0.5"
   }
 }

@@ -40,8 +40,8 @@ function ProfileButton({ user }) {
       {showMenu && ( */}
         <div className="modalBtn">
           <h1 className="welcomeText">Welcome, {user.username}</h1>
-          <NavLink exact to="/" ><button onClick={logout} className='roundHomeBtn'>
-          <img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1655257195/home_jsz19t.png" />
+          <NavLink exact to="/" ><button className='roundHomeBtn'>
+          <a href="#"><img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1655257195/home_jsz19t.png" /></a>
             </button></NavLink>
           <NavLink exact to="/" ><button onClick={logout} className='logOutBtn'>Log Out</button></NavLink>
         </div>

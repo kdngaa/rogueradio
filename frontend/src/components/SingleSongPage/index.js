@@ -9,7 +9,6 @@ import { removeAComment, postComment, getCommentById, getComments } from "../../
 import PostComment from "../PostCommentForm";
 import LoginFormModal from '../LoginFormModal';
 
-
 function OneSong() {
     const { songId } = useParams();
     const song = useSelector((state) => state.song[songId])
@@ -31,7 +30,7 @@ function OneSong() {
         dispatch(postComment())
         dispatch(getComments())
         dispatch(getCommentById(songId))
-    }, [dispatch, comments])
+    }, [dispatch])
 
     if (!comments) {
         return null;
@@ -44,12 +43,12 @@ function OneSong() {
         if (song) {
             loggedIn = (
                 <>
-                    <NavLink to={`/songs/${song.id}/edit`}>
-                        <button className="editBtn">Edit Song</button>
+                    <NavLink className="editBtn" to={`/songs/${song.id}/edit`}>
+                        <a href="#"><img src='https://res.cloudinary.com/dv3gxfdon/image/upload/v1655267268/edit_3_sliotc.png' /></a>
                     </NavLink>
                     <button className="deleteBtn" id="removeSongBtn" onClick={handleDelete}
                     >
-                        Delete Song
+                        <a href="#">  <img src='https://res.cloudinary.com/dv3gxfdon/image/upload/v1655267269/trash-bin_1_jyrmfw.png' /> </a>
                     </button>
                 </>
             )
@@ -64,18 +63,22 @@ function OneSong() {
 
     return (
         <>
-            <img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1649573482/normal_photo_1612372083_ogefid.gif" alt="gif" className='gif2' />
             {song && (<div className="singlePage">
-                <img src={song.songImg} width='450px' height='450px' className="songImg1" />
-                <ReactAudioPlayer
+                <div className="allInfo">
+                    <img src={song.songImg} width='450px' height='450px' className="songImg1" />
+                    <div className="songInformation">
+                        <p className="title">{`${song.title}`}</p>
+                        <p className="artist">{`${song.artist}`}</p>
+                        <p className="genre">{`${song.genre}`}</p>
+                    </div>
+                </div>
+                {sessionUser.id === song.userId && loggedIn}
+                <p> <ReactAudioPlayer
                     src={`${song.audioFile}`}
                     controls
-                />
-                <p className="songText">{`Title: ${song.title}`}</p>
-                <p className="songText">{`Artist: ${song.artist}`}</p>
-                <p className="songText">{`Genre: ${song.genre}`}</p>
+                    className="audioPlayer"
+                /></p>
                 <PostComment song={song} />
-                {sessionUser.id === song.userId && loggedIn}
             </div>)}
             <div className="commentSection">
                 <h2>COMMENTS</h2>

@@ -1,4 +1,4 @@
-.singlePage {
+/* .singlePage {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -15,18 +15,12 @@
   color: black;
   font-weight: bolder;
   text-decoration: none;
-}
+} */
 
 
-.editBtn {
-  border-radius: 10px;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 220px;
-  background-color: lightblue;
-}
+
+
+
 
 
 .commentSection {
@@ -37,14 +31,6 @@
   margin-top: 1%;
 }
 
-
-.songImg1 {
-  border: 1px solid black;
-  margin: 1rem;
-  padding: 2rem 2rem;
-  text-align: center;
-  justify-content: center;
-}
 
 .commentCreator {
   font-weight: bolder;
@@ -63,11 +49,6 @@
   left: 0px;
 }
 
-.deleteBtn {
-  width: 150px;
-  border-radius: 10px;
-  background-color: coral;
-}
 
 #removeSongBtn {
   display: flexbox;
@@ -96,4 +77,61 @@
   right: 0;
   width: 250px;
   height: 200px;
+}
+
+
+.allInfo{
+  display: flex;
+  flex-direction: row;
+  padding-left: 5%;
+  padding-top: 5%;
+}
+
+.audioPlayer{
+  padding-left: 5%;
+  width: 450px;
+}
+
+
+.songInfomation{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.title{
+  font-family: "Monsterat", sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  padding-left: 20%;
+  width: 600px;
+}
+
+.artist{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 30px;
+  padding-left: 20%;
+  width: 600px;
+}
+
+.genre{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 30px;
+  padding-left: 20%;
+}
+
+
+.deleteBtn{
+  background: none;
+  border: none;
+  padding-left: 1%;
+}
+
+.editBtn{
+  padding-left: 5%;
 }
