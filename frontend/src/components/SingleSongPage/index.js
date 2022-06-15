@@ -88,13 +88,13 @@ function OneSong() {
                 {comments.map((comment, idx) => (
                     <>
                         <div className="subComment">
-                            {/* <p className="commentCreator">{comment.user.username} said:</p> */}
+                            <p className="commentCreator">{sessionUser.username}:</p>
                             <p key={idx} className="commentContent">{comment.content}</p>
-                            <div>
+                            <>
                                 {sessionUser.id === comment.userId && (
                                     <a><button onClick={(e) => dispatch(removeAComment(comment.id))}>Remove Comment</button></a>
                                 )}
-                            </div>
+                            </>
                         </div>
                     </>
                 ))}
