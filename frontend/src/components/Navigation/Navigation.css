@@ -1,4 +1,4 @@
-.userAuthNav{
+.userAuthNav {
   background-color: transparent;
   display: inline-block;
   position: fixed;
@@ -10,8 +10,8 @@
 }
 
 
-.logOutBtn{
-  width:fit-content;
+.logOutBtn {
+  width: fit-content;
   justify-content: center;
   align-items: center;
   background-color: red;
@@ -19,7 +19,7 @@
   margin-top: 5px;
   border-radius: 20px;
   border: none;
-  font-size: 10pt;
+  font-size: 15pt;
   font-weight: 700;
   transition: 1s;
   outline: none;
@@ -35,9 +35,9 @@
 } */
 
 
-.modalBtn{
- display: flex;
-justify-content:space-evenly;
+.modalBtn {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 
@@ -59,18 +59,22 @@ justify-content:space-evenly;
   background-color: #1DB954;
   border: none;
   font-size: 12pt;
-  font-weight: 700;
+  font-family: "Monsterat", sans-serif;
+  font-weight: 900;
 }
 
 
 
-.homeBtn{
-  text-decoration: none;
-  width: 40px;
-  height: 40px;
-  margin-top: 1.5%;
-  margin-right: 2%;
-  position: absolute;
-  top: 0px;
-  right: 0px;
+.roundHomeBtn {
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+
+.welcomeText {
+  font-family: "Monsterat", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }

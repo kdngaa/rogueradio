@@ -84,7 +84,7 @@
 
 
 .heading1 {
-  margin-top: 8%;
+  margin-top: 5%;
   align-items: center;
   justify-content: space-around;
   display: flex;
@@ -113,6 +113,7 @@
   background-size: cover;
   width: 300px;
   height: 300px;
+  padding-bottom: 5%;
 }
 
 .swiper-slide img {
@@ -131,9 +132,9 @@
 
 
 .carousel{
-  background-color: black;
   height: 600px;
-  background-image: url("https://res.cloudinary.com/dv3gxfdon/image/upload/v1655234775/roguebanner_hrtl4q.png");
+  background-image: url("https://res.cloudinary.com/dv3gxfdon/image/upload/v1655255437/black-simple-music-channel-youtube-banner_optimized_z03s5w.png");
   background-repeat: no-repeat;
   background-size: 100% 600px;
+  background-position: center;
 }

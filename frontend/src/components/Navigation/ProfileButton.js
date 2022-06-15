@@ -1,5 +1,6 @@
 // frontend/src/components/Navigation/ProfileButton.js
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { NavLink } from 'react-router-dom';
@@ -7,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
-
+  const history = useHistory()
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
@@ -28,6 +29,7 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    history.push("/")
   };
 
   return (
@@ -37,7 +39,10 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && ( */}
         <div className="modalBtn">
-          <h1>Hi, {user.username}</h1>
+          <h1 className="welcomeText">Welcome, {user.username}</h1>
+          <NavLink exact to="/" ><button onClick={logout} className='roundHomeBtn'>
+          <img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1655257195/home_jsz19t.png" />
+            </button></NavLink>
           <NavLink exact to="/" ><button onClick={logout} className='logOutBtn'>Log Out</button></NavLink>
         </div>
       {/* )} */}
