@@ -53,13 +53,15 @@ function PostComment({ song }) {
                         </li>
                     ))}
                 </ul>
-                <input
+                <textarea
                     onChange={(e) => setContent(e.target.value)}
                     value={content}
-                    placeholder='Comment here...'
+                    placeholder='Type here...'
+                    className='mainCommentSection'
                 />
-                <button type="submit" className='commentBtn' disabled={errors.length > 0}>Submit Comment</button>
-
+                <p>
+                <button type="submit" className='commentBtn' disabled={errors.length > 0}>Submit Review</button>
+                </p>
             </form>
         </section>
     )

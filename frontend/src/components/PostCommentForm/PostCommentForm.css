@@ -1,0 +1,14 @@
+.mainCommentSection{
+    margin-left: 5%;
+}
+
+
+textarea {
+    resize: none;
+    width: 450px;
+    height: 30px;
+  }
+
+.commentBtn{
+    margin-left: 5%;
+}

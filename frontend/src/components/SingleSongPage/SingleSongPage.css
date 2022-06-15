@@ -25,10 +25,8 @@
 
 .commentSection {
   display: flexbox;
-  position: absolute;
   right: 0;
-  margin-right: 37%;
-  margin-top: 1%;
+  padding-left: 5%;
 }
 
 
@@ -59,15 +57,10 @@
 
 .commentContent {
   max-width: 1000px;
-  border-radius: 20px;
   margin: 10px auto;
-  background: black;
-  padding: 20px;
-  text-align: center;
+  text-align: left;
   font-weight: 900;
-  color: #fff;
   font-family: arial;
-  position: relative;
 }
 
 
@@ -134,4 +127,14 @@
 
 .editBtn{
   padding-left: 5%;
+}
+
+
+.commentHead{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+.subComment{
+  padding-bottom: 8%;
 }

@@ -81,17 +81,17 @@ function OneSong() {
                 <PostComment song={song} />
             </div>)}
             <div className="commentSection">
-                <h2>COMMENTS</h2>
+                <h2 className="commentHead">REVIEWS</h2>
                 {comments.map((comment, idx) => (
                     <>
                         <div className="subComment">
                             <p className="commentCreator">{comment.User.username} said:</p>
                             <p key={idx} className="commentContent">{comment.content}</p>
-                        </div>
-                        <div>
-                            {sessionUser.id === comment.userId && (
-                                <button className="deleteBtn grow" onClick={(e) => dispatch(removeAComment(comment.id))}>Remove Comment</button>
-                            )}
+                            <div>
+                                {sessionUser.id === comment.userId && (
+                                    <a><button onClick={(e) => dispatch(removeAComment(comment.id))}>Remove Comment</button></a>
+                                )}
+                            </div>
                         </div>
                     </>
                 ))}
