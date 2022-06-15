@@ -85,7 +85,7 @@ function OneSong() {
                 {comments.map((comment, idx) => (
                     <>
                         <div className="subComment">
-                            <p className="commentCreator">{comment.User.username} said:</p>
+                            {/* <p className="commentCreator">{comment.User.username} said:</p> */}
                             <p key={idx} className="commentContent">{comment.content}</p>
                             <div>
                                 {sessionUser.id === comment.userId && (

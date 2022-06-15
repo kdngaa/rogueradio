@@ -39,6 +39,7 @@ router.post('/', asyncHandler(async (req, res) => {
     const newComment = await Comment.create({
         userId, songId, content
     })
+    console.log(newComment, "<<<<<==")
     return res.json({ newComment });
 }))
 

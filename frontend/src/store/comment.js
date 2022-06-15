@@ -60,7 +60,8 @@ export const postComment = (comment) => async dispatch => {
     })
     if (res.ok) {
         const info = await res.json()
-        dispatch(addComment(info.comment))
+        console.log(info, "<<<<<====>>>>>>>>>")
+        dispatch(addComment(info))
     }
 }
 
@@ -113,6 +114,7 @@ const commentReducer = (state = [], action) => {
             }
 
         case ADD_COMMENT:
+            console.log(action.comment, "<<<<====//////")
             newState = { ...state, [action.comment.id]: action.comment }
             return newState;
         case REMOVE_COMMENT:
