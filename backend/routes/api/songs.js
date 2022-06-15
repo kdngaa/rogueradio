@@ -9,7 +9,6 @@ const { Song, User, Like, Comment } = require('../../db/models');
 // GET ALL SONGS (READ)
 router.get('/', asyncHandler( async(req, res) => {
     const getAllSongs = await Song.findAll();
-    console.log(getAllSongs)
     return res.json(getAllSongs)
 }))
 
@@ -21,7 +20,8 @@ router.get('/', asyncHandler( async(req, res) => {
 router.get('/:id(\\d+)', asyncHandler( async(req, res) =>{
     const id = parseInt(req.params.id, 10)
     const song = await Song.findByPk(id,{
-        include: [db.User, {model: db.Comment, include: db.User}]
+        // include: [db.User, {model: db.Comment, include: db.User}]
+        include: [db.User, db.Comment]
     })
 
     return res.json(song)

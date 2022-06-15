@@ -19,12 +19,12 @@ router.get('/', asyncHandler(async (req, res) => {
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     // const commentId = req.params.id;
     const id = parseInt(req.params.id, 10)
-    const currentComment = await Comment.findAll({
+    const currentComments = await Comment.findAll({
         where: { songId: id },
         include: [{ model: Song }, { model: User }]
     })
 
-    return res.json(currentComment)
+    return res.json(currentComments)
 }))
 
 
@@ -36,11 +36,10 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
 router.post('/', asyncHandler(async (req, res) => {
     const { userId, songId, content } = req.body;
 
-    const newComment = await Comment.create({
+    const comment = await Comment.create({
         userId, songId, content
     })
-    console.log(newComment, "<<<<<==")
-    return res.json({ newComment });
+    return res.json({ comment });
 }))
 
 

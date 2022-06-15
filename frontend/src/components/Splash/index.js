@@ -28,7 +28,7 @@ function Splash() {
 
     const sessionUser = useSelector((state) => state.session.user)
     const songs = useSelector(state => state.song);
-    console.log(songs)
+   
     const songInfo = Object.values(songs)
 
 

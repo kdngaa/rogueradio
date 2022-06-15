@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 
 
-function PostComment({ song }) {
+function PostComment({ song, state}) {
     const dispatch = useDispatch()
     const history = useHistory()
     // const [userId, setUserId] = useState("")
@@ -15,7 +15,6 @@ function PostComment({ song }) {
     const [errors, setErrors] = useState([])
 
     const sessionUser = useSelector((state) => state.session.user)
-    console.log(sessionUser, "=====>")
 
 
     useEffect(() => {
@@ -38,7 +37,7 @@ function PostComment({ song }) {
         const comment = { userId: sessionUser.id, songId: song.id, content }
 
         await dispatch(postComment(comment))
-
+        // state.setUpdate(!update)
         history.push(`/songs/${song.id}`)
         setContent("")
     }

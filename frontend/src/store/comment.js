@@ -36,8 +36,8 @@ const removeComment = comment => {
 
 
 // //GET ALL COMMENTS
-export const getComments = () => async dispatch => {
-    const res = await csrfFetch('/api/comments')
+export const getComments = (id) => async dispatch => {
+    const res = await csrfFetch(`/api/comments/${id}`)
 
     if (res.ok) {
         const comments = await res.json()
@@ -69,13 +69,13 @@ export const postComment = (comment) => async dispatch => {
 
 
 // // GET COMMENT BY ID
-export const getCommentById = id => async (dispatch) => {
-    const res = await fetch(`/api/comments/${id}`)
+// export const getCommentById = id => async (dispatch) => {
+//     const res = await fetch(`/api/comments/${id}`)
 
-    const info = await res.json()
-    dispatch(load(info))
-    return res
-}
+//     const info = await res.json()
+//     dispatch(load(info))
+//     return res
+// }
 
 
 
@@ -110,16 +110,16 @@ const commentReducer = (state = [], action) => {
 
             return {
                 ...getComments,
-                ...state.comments
+                ...state
             }
 
         case ADD_COMMENT:
             console.log(action.comment, "<<<<====//////")
-            newState = { ...state, [action.comment.id]: action.comment }
+            newState = { ...state, [action.comment.comment.id]: action.comment.comment }
             return newState;
         case REMOVE_COMMENT:
             newState = { ...state }
-            delete newState[action.payload]
+            delete newState[action.comment.id]
             return { ...newState }
         default:
             return state

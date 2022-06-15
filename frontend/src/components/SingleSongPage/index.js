@@ -1,5 +1,5 @@
-import { getSongs } from "../../store/song";
-import React, { useEffect } from "react";
+import { getSongById, getSongs } from "../../store/song";
+import React, { useEffect, useState } from "react";
 import { NavLink, useHistory, useParams } from "react-router-dom";
 import './SingleSongPage.css';
 import { useDispatch, useSelector } from "react-redux";
@@ -16,6 +16,9 @@ function OneSong() {
     const dispatch = useDispatch()
     const sessionUser = useSelector((state) => state.session.user)
     const history = useHistory()
+    const [update, setUpdate] = useState(false)
+
+    const state = {update, setUpdate}
 
 
 
@@ -27,10 +30,10 @@ function OneSong() {
 
 
     useEffect(() => {
-        dispatch(postComment())
-        dispatch(getComments())
-        dispatch(getCommentById(songId))
-    }, [dispatch])
+        dispatch(getComments(songId))
+        // dispatch(getCommentById(songId))
+        dispatch(getSongById(songId))
+    }, [dispatch, update])
 
     if (!comments) {
         return null;
@@ -78,14 +81,14 @@ function OneSong() {
                     controls
                     className="audioPlayer"
                 /></p>
-                <PostComment song={song} />
+                <PostComment song={song} state={state}/>
             </div>)}
             <div className="commentSection">
                 <h2 className="commentHead">REVIEWS</h2>
                 {comments.map((comment, idx) => (
                     <>
                         <div className="subComment">
-                            {/* <p className="commentCreator">{comment.User.username} said:</p> */}
+                            {/* <p className="commentCreator">{comment.user.username} said:</p> */}
                             <p key={idx} className="commentContent">{comment.content}</p>
                             <div>
                                 {sessionUser.id === comment.userId && (
