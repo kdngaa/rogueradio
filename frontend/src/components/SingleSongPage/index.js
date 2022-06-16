@@ -75,19 +75,19 @@ function OneSong() {
                 <div className="allInfo">
                     <img src={song.songImg} width='450px' height='450px' className="songImg1" />
                     <div className="songInformation">
-                        <p className="title">{`${song.title}`}</p>
-                        <p className="artist">{`${song.artist}`}</p>
-                        <p className="genre">{`${song.genre}`}</p>
-                        <p className="waveDash"><WaveForm song={song.audioFile} play={play} setPlay={setPlay} /></p>
-                    </div>
-                </div>
+                        <p className="title">
                 {!play ? <button className="playBtn" onClick={() => setPlay(true)} >
                     <a href="#"><img src='https://res.cloudinary.com/dv3gxfdon/image/upload/v1655411756/play-button_yxpm7c.png' /></a>
                 </button> :
                     <button className="playBtn" onClick={() => setPlay(false)} >
 
                         <a href="#">  <img src='https://res.cloudinary.com/dv3gxfdon/image/upload/v1655411755/pause_1_wfskrg.png' /></a>
-                    </button>}
+                    </button>}  {`${song.title}`}</p>
+                        <p className="artist">{`${song.artist}`}</p>
+                        <p className="genre">{`${song.genre}`}</p>
+                        <p className="waveDash"><WaveForm song={song.audioFile} play={play} setPlay={setPlay} /></p>
+                    </div>
+                </div>
                 {sessionUser.id === song.userId && loggedIn}
                 {/* <p> <ReactAudioPlayer
                     src={`${song.audioFile}`}
