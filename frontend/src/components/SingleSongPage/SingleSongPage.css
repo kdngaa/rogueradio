@@ -89,7 +89,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-left: 20%;
+  padding-left: 10%;
 }
 
 
@@ -97,7 +97,7 @@
   font-family: "Monsterat", sans-serif;
   font-weight: 900;
   font-size: 65px;
-  padding-left: 20%;
+  padding-left: 10%;
   width: 1000px;
   display: flex;
   flex-direction: row;
@@ -108,7 +108,7 @@
   font-style: italic;
   font-weight: 200;
   font-size: 20px;
-  padding-left: 20%;
+  padding-left: 10%;
   width: 600px;
 }
 
@@ -117,7 +117,7 @@
   font-style: italic;
   font-weight: 200;
   font-size: 20px;
-  padding-left: 20%;
+  padding-left: 10%;
 }
 
 
@@ -149,5 +149,5 @@
 
 
 .waveDash{
- padding-left: 20%;
+ padding-left: 10%;
 }
