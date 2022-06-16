@@ -8,6 +8,10 @@ import { removeASong } from "../../store/song";
 import { removeAComment, postComment, getCommentById, getComments } from "../../store/comment";
 import PostComment from "../PostCommentForm";
 import LoginFormModal from '../LoginFormModal';
+import Player from "../AudioPlayer/AudioPlayer";
+import WaveForm from "../WaveSurfer/Wavesurfer";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 function OneSong() {
     const { songId } = useParams();
@@ -17,8 +21,9 @@ function OneSong() {
     const sessionUser = useSelector((state) => state.session.user)
     const history = useHistory()
     const [update, setUpdate] = useState(false)
+    const [play, setPlay] = useState(false);
 
-    const state = {update, setUpdate}
+    const state = { update, setUpdate }
 
 
 
@@ -73,15 +78,27 @@ function OneSong() {
                         <p className="title">{`${song.title}`}</p>
                         <p className="artist">{`${song.artist}`}</p>
                         <p className="genre">{`${song.genre}`}</p>
+                        <p className="waveDash"><WaveForm song={song.audioFile} play={play} setPlay={setPlay} /></p>
                     </div>
                 </div>
+                {!play ? <button className="playBtn" onClick={() => setPlay(true)} >
+                    <a href="#"><img src='https://res.cloudinary.com/dv3gxfdon/image/upload/v1655411756/play-button_yxpm7c.png' /></a>
+                </button> :
+                    <button className="playBtn" onClick={() => setPlay(false)} >
+
+                        <a href="#">  <img src='https://res.cloudinary.com/dv3gxfdon/image/upload/v1655411755/pause_1_wfskrg.png' /></a>
+                    </button>}
                 {sessionUser.id === song.userId && loggedIn}
-                <p> <ReactAudioPlayer
+                {/* <p> <ReactAudioPlayer
                     src={`${song.audioFile}`}
                     controls
                     className="audioPlayer"
-                /></p>
-                <PostComment song={song} state={state}/>
+                /></p> */}
+
+
+
+
+                <PostComment song={song} state={state} />
             </div>)}
             <div className="commentSection">
                 <h2 className="commentHead">REVIEWS</h2>

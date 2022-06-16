@@ -89,31 +89,32 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-left: 20%;
 }
 
 
 .title{
   font-family: "Monsterat", sans-serif;
   font-weight: 900;
-  font-size: 80px;
+  font-size: 65px;
   padding-left: 20%;
   width: 1000px;
 }
 
 .artist{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Arial', 'Arial Narrow', Arial, sans-serif;
   font-style: italic;
   font-weight: 200;
-  font-size: 35px;
+  font-size: 20px;
   padding-left: 20%;
   width: 600px;
 }
 
 .genre{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Arial', 'Arial Narrow', Arial, sans-serif;
   font-style: italic;
   font-weight: 200;
-  font-size: 35px;
+  font-size: 20px;
   padding-left: 20%;
 }
 
@@ -136,4 +137,17 @@
 
 .subComment{
   padding-bottom: 4%;
+}
+
+
+.playBtn{
+  background: none;
+  border: none;
+  padding-left: 5%;
+  padding-top: 2%;
+}
+
+
+.waveDash{
+ padding-left: 20%;
 }

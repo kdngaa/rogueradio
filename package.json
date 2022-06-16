@@ -24,7 +24,12 @@
   },
   "homepage": "https://github.com/kdngaa/staycation#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "react-h5-audio-player": "^3.8.4",
     "react-wavy-audio": "^1.0.3",
-    "reactjs-popup": "^2.0.5"
+    "reactjs-popup": "^2.0.5",
+    "wavesurfer.js": "^6.2.0"
   }
 }
