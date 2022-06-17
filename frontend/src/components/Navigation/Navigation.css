@@ -38,6 +38,12 @@
 .modalBtn {
   display: flex;
   justify-content: space-evenly;
+  background-color: 	#484848;
+  /* position: fixed;
+  top: 0;
+  right: 0;
+  left: 0; */
+  height: 40px;
 }
 
 
