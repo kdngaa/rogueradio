@@ -13,6 +13,7 @@ function PostComment({ song, state}) {
     // const [songId, setSongId] = useState("")
     const [content, setContent] = useState("")
     const [errors, setErrors] = useState([])
+    const [errorVisible, setErrorVisible] = useState(false)
 
     const sessionUser = useSelector((state) => state.session.user)
 
@@ -33,11 +34,12 @@ function PostComment({ song, state}) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
+        setErrorVisible(true)
         const comment = { userId: sessionUser.id, songId: song.id, content }
 
         await dispatch(postComment(comment))
         // state.setUpdate(!update)
+        setErrorVisible(false)
         history.push(`/songs/${song.id}`)
         setContent("")
     }
@@ -45,13 +47,13 @@ function PostComment({ song, state}) {
     return (
         <section>
             <form onSubmit={handleSubmit}>
-                <ul className="errors">
+            {errorVisible && ( <ul className="errors">
                     {errors.map((error, indx) => (
                         <li key={indx}>
                             {error}
                         </li>
                     ))}
-                </ul>
+                </ul>)}
                 <textarea
                     onChange={(e) => setContent(e.target.value)}
                     value={content}
