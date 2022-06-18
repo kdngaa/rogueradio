@@ -28,7 +28,7 @@ function Splash() {
 
     const sessionUser = useSelector((state) => state.session.user)
     const songs = useSelector(state => state.song);
-   
+
     const songInfo = Object.values(songs)
 
 
@@ -48,7 +48,12 @@ function Splash() {
             <div className="carousel">
                 {/* <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600"/> */}
             </div>
-            <h1 className="heading1">This Week's Top Streams</h1>
+            <h1 className="heading1">This Week's Picks</h1>
+            <p className="underText">
+                <img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1655593935/fast-forward_pnrnse.png" alt="Girl in a jacket" width="30" height="30" />
+                Scroll and Browse
+                <img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1655593909/fast-forward_oz3oh1.png" alt="Girl in a jacket" width="30" height="30" />
+            </p>
             {/* <div className="topCards"> */}
 
             <Swiper
