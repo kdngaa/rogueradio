@@ -35,9 +35,9 @@ function App() {
           <Route exact path='/'>
             <Splash songs={songs}/>
           </Route>
-          <Route path='/upload' >
+          {/* <Route path='/upload' >
             <UploadForm user={sessionUser} />
-          </Route>
+          </Route> */}
           <Route exact path='/songs/:songId' >
             <OneSong />
           </Route>
