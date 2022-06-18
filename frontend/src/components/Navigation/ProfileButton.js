@@ -44,7 +44,8 @@ function ProfileButton({ user }) {
           <a href="#"><img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1655432624/vinyl_gevs3z.png" /></a>
             </button></NavLink>
           <h1 className="welcomeText">Welcome, {user.username}</h1>
-          <UploadFormModal/>
+          {/* <UploadFormModal/> */}
+          <NavLink exact to="/upload" ><button className='uploadMainBtn'>Upload</button></NavLink>
           <NavLink exact to="/" ><button onClick={logout} className='logOutBtn'>Log Out</button></NavLink>
         </div>
       {/* )} */}

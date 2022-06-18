@@ -54,7 +54,7 @@ function EditSong({ song }) {
 
     return (
         <section>
-            <form className="uploadSongForm" onSubmit={handleSubmit}>
+            <form className="uploadSongForm solid" onSubmit={handleSubmit}>
                 <ul className="errors">
                     {errors.map((error, indx) => (
                         <li key={indx}>
@@ -62,13 +62,14 @@ function EditSong({ song }) {
                         </li>
                     ))}
                 </ul>
+                <h1 className="signUpText">Edit Song</h1>
                 <input
                     type="text"
                     placeholder="Title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     required
-                    className="fieldText"
+                    className='uploadBox'
                 />
                 <input
                     type="text"
@@ -76,7 +77,7 @@ function EditSong({ song }) {
                     value={genre}
                     onChange={(e) => setGenre(e.target.value)}
                     required
-                    className="fieldText"
+                    className='uploadBox'
                 />
                 <input
                     type="text"
@@ -84,7 +85,7 @@ function EditSong({ song }) {
                     value={artist}
                     onChange={(e) => setArtist(e.target.value)}
                     required
-                    className="fieldText"
+                    className='uploadBox'
                 />
                 <input
                     type="text"
@@ -92,7 +93,7 @@ function EditSong({ song }) {
                     value={songImg}
                     onChange={(e) => setSongImg(e.target.value)}
                     required
-                    className="fieldText"
+                    className='uploadBox'
                 />
                 <label className="fileHead">Please use Cloudinary for your MP3/MP4 files</label>
                 <input
@@ -101,9 +102,9 @@ function EditSong({ song }) {
                     value={audioFile}
                     onChange={(e) => setAudioFile(e.target.value)}
                     required
-                    className="fileBtn"
+                    className='uploadBox'
                 />
-                <button className="editSongBtn" type="Submit" disabled={errors.length > 0}>Update Song</button>
+                <button className="upload-btn grow" type="Submit" disabled={errors.length > 0}>Update Song</button>
             </form>
         </section>
     )

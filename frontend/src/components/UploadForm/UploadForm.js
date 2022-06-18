@@ -54,7 +54,6 @@ function UploadForm() {
 
     return (
         <section>
-            <div className='signUpForm'>
             <form className="uploadSongForm solid" onSubmit={handleSubmit}>
                 {errorVisible && (<ul>
                     {errors.map((error, indx) => (
@@ -63,7 +62,7 @@ function UploadForm() {
                         </li>
                     ))}
                 </ul>)}
-                <h1 className="signUpText">Upload</h1>
+                <h1 className="signUpText">Upload Song</h1>
                 <input
                     type="text"
                     placeholder="Title"
@@ -100,9 +99,9 @@ function UploadForm() {
                     onChange={(e) => setAudioFile(e.target.value)}
                     className='uploadBox'
                 />
-                <button className="upload-btn grow" type="Submit" >Post Song</button>
+                <p className="centerIt"><button className="upload-btn grow" type="Submit" >Post Song</button></p>
             </form>
-            </div>
+
         </section>
     )
 

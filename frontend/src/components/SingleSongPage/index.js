@@ -7,10 +7,7 @@ import ReactAudioPlayer from 'react-audio-player';
 import { removeASong } from "../../store/song";
 import { removeAComment, postComment, getCommentById, getComments } from "../../store/comment";
 import PostComment from "../PostCommentForm";
-import LoginFormModal from '../LoginFormModal';
-import Player from "../AudioPlayer/AudioPlayer";
 import WaveForm from "../WaveSurfer/Wavesurfer";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 function OneSong() {

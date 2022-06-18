@@ -17,6 +17,9 @@
     height: max-content;
     width: max-content;
     padding-top: 20px;
+    margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
 
 
@@ -30,7 +33,7 @@
     height: max-content;
     justify-content: center;
     align-items: center;
-    background-color: green;
+    background-color: #1DB954;
     color: white;
     margin-top: 5px;
     border-radius: 20px;
@@ -59,7 +62,7 @@
     background: white;
     transition: 1s;
     outline: none;
-    width: 100%;
+    width: 95%;
 }
 
 .upload-btn{
@@ -72,4 +75,5 @@
     font-family: "Monsterat", sans-serif;
     margin-bottom: 5%;
     margin-top: 5%;
+    width: 100%;
 }
