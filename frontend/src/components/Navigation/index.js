@@ -14,9 +14,9 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <ProfileButton user={sessionUser} />
-        <NavLink to="/upload" user={sessionUser} className="uploadBtn">
+        {/* <NavLink to="/upload" user={sessionUser} className="uploadBtn">
         <img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1655256912/music_ei5z8n.png" />
-        </NavLink>
+        </NavLink> */}
       </>
     );
   } else {

@@ -8,7 +8,7 @@ function UploadFormModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)} className="signUpMainBtn">Upload Song</button>
+      <button onClick={() => setShowModal(true)} className="uploadMainBtn">Upload Song</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <UploadForm />

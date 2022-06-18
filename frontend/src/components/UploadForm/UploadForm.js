@@ -54,7 +54,8 @@ function UploadForm() {
 
     return (
         <section>
-            <form className="uploadSongForm" onSubmit={handleSubmit}>
+            <div className='signUpForm'>
+            <form className="uploadSongForm solid" onSubmit={handleSubmit}>
                 {errorVisible && (<ul>
                     {errors.map((error, indx) => (
                         <li key={indx} className="errors">
@@ -62,33 +63,34 @@ function UploadForm() {
                         </li>
                     ))}
                 </ul>)}
+                <h1 className="signUpText">Upload</h1>
                 <input
                     type="text"
                     placeholder="Title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="fieldText"
+                    className='uploadBox'
                 />
                 <input
                     type="text"
                     placeholder="Genre"
                     value={genre}
                     onChange={(e) => setGenre(e.target.value)}
-                    className="fieldText"
+                    className='uploadBox'
                 />
                 <input
                     type="text"
                     placeholder="Artist"
                     value={artist}
                     onChange={(e) => setArtist(e.target.value)}
-                    className="fieldText"
+                    className='uploadBox'
                 />
                 <input
                     type="text"
                     placeholder="Image URL"
                     value={songImg}
                     onChange={(e) => setSongImg(e.target.value)}
-                    className="fieldText"
+                    className='uploadBox'
                 />
                 <label className="fileHead">Please use Cloudinary for your MP3/MP4 files</label>
                 <input
@@ -96,10 +98,11 @@ function UploadForm() {
                     placeholder="MP3/MP4"
                     value={audioFile}
                     onChange={(e) => setAudioFile(e.target.value)}
-                    className="fileBtn"
+                    className='uploadBox'
                 />
-                <button className="updateBtn" type="Submit" >Post Song</button>
+                <button className="upload-btn grow" type="Submit" >Post Song</button>
             </form>
+            </div>
         </section>
     )
 

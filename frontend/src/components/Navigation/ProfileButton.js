@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { NavLink } from 'react-router-dom';
+import UploadFormModal from "../UploadForm";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ function ProfileButton({ user }) {
           <a href="#"><img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1655432624/vinyl_gevs3z.png" /></a>
             </button></NavLink>
           <h1 className="welcomeText">Welcome, {user.username}</h1>
+          <UploadFormModal/>
           <NavLink exact to="/" ><button onClick={logout} className='logOutBtn'>Log Out</button></NavLink>
         </div>
       {/* )} */}
