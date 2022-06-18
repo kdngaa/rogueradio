@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import './UploadForm.css'
 import { postSong } from "../../store/song";
 import { useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 // import { useEffect } from "react/cjs/react.production.min";
 
 function UploadForm() {
@@ -99,7 +100,9 @@ function UploadForm() {
                     onChange={(e) => setAudioFile(e.target.value)}
                     className='uploadBox'
                 />
-                <p className="centerIt"><button className="upload-btn grow" type="Submit" >Post Song</button></p>
+                <p>
+                    <button className="upload-btn grow" type="submit" >Post Song</button>
+                </p>
             </form>
 
         </section>
