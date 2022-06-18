@@ -39,10 +39,10 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && ( */}
         <div className="modalBtn">
-          <h1 className="welcomeText">Welcome, {user.username}</h1>
           <NavLink exact to="/" ><button className='roundHomeBtn'>
           <a href="#"><img src="https://res.cloudinary.com/dv3gxfdon/image/upload/v1655432624/vinyl_gevs3z.png" /></a>
             </button></NavLink>
+          <h1 className="welcomeText">Welcome, {user.username}</h1>
           <NavLink exact to="/" ><button onClick={logout} className='logOutBtn'>Log Out</button></NavLink>
         </div>
       {/* )} */}
