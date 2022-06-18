@@ -78,7 +78,7 @@ function SignupForm() {
               required
             />
           </label>
-          <button type="submit" className="signUp-btn grow">Create Account</button>
+          <button type="submit" className="upload-btn grow">Create Account</button>
         </form>
       </div>
     </div>
