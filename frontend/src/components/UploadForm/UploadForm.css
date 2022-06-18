@@ -10,7 +10,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px 620px;
     padding: 50px;
     border-radius: 10px;
     -webkit-box-shadow: 0 0 20px #1DB954;
@@ -23,5 +22,5 @@
 .updateBtn{
         background-color: #1DB954;
         border-radius: 10px;
-        margin-top: 8%;
+        margin-top: 2%;
 }

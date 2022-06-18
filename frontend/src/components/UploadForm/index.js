@@ -13,7 +13,7 @@ function Upload() {
     const [genre, setGenre] = useState("")
     const [songImg, setSongImg] = useState("")
     const [audioFile, setAudioFile] = useState(null)
-
+    const [errorVisible, setErrorVisible] = useState(false)
     const [errors, setErrors] = useState([])
 
     const sessionUser = useSelector((state) => state.session.user)
@@ -41,29 +41,32 @@ function Upload() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
+        setErrorVisible(true)
+
         const song = { userId: sessionUser.id, title, artist, genre, songImg, audioFile }
+        if (errors.length === 0) {
+            dispatch(postSong(song))
 
-        dispatch(postSong(song))
-
-        history.push('/') //redirect to home after added
+            history.push('/') //redirect to home after added
+        }
+        setErrorVisible([])
     }
 
     return (
         <section>
             <form className="uploadSongForm" onSubmit={handleSubmit}>
-                <ul className="errors">
+                {errorVisible && (<ul>
                     {errors.map((error, indx) => (
-                        <li key={indx}>
+                        <li key={indx} className="errors">
                             {error}
                         </li>
                     ))}
-                </ul>
+                </ul>)}
                 <input
                     type="text"
                     placeholder="Title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    required
                     className="fieldText"
                 />
                 <input
@@ -71,7 +74,6 @@ function Upload() {
                     placeholder="Genre"
                     value={genre}
                     onChange={(e) => setGenre(e.target.value)}
-                    required
                     className="fieldText"
                 />
                 <input
@@ -79,7 +81,6 @@ function Upload() {
                     placeholder="Artist"
                     value={artist}
                     onChange={(e) => setArtist(e.target.value)}
-                    required
                     className="fieldText"
                 />
                 <input
@@ -87,7 +88,6 @@ function Upload() {
                     placeholder="Image URL"
                     value={songImg}
                     onChange={(e) => setSongImg(e.target.value)}
-                    required
                     className="fieldText"
                 />
                 <label className="fileHead">Please use Cloudinary for your MP3/MP4 files</label>
@@ -96,10 +96,9 @@ function Upload() {
                     placeholder="MP3/MP4"
                     value={audioFile}
                     onChange={(e) => setAudioFile(e.target.value)}
-                    required
                     className="fileBtn"
                 />
-                <button className="updateBtn" type="Submit" disabled={errors.length > 0}>Post Song</button>
+                <button className="updateBtn" type="Submit" >Post Song</button>
             </form>
         </section>
     )

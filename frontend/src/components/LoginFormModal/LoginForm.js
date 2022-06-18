@@ -63,7 +63,7 @@ function LoginForm() {
               required
             />
           </label>
-          <button type="submit" className="logIn-btn grow">Enter RogueRadio</button>
+          <button type="submit" className="logIn-btn grow">Enter</button>
           <button type="submit" className="demoBtn" onClick={demo}>Demo Login</button>
 
         </form>
